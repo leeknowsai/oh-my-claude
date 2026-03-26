@@ -1,4 +1,4 @@
-# oh-my-claude
+# What is oh-my-claude?
 
 > Coding with Claude is stressful. Make yourself smile while Claude is thinking.
 

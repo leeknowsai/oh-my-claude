@@ -1,0 +1,130 @@
+{
+  "id": "zen",
+  "name": "Zen Garden",
+  "version": "0.1.0",
+  "author": "oh-my-claude",
+  "description": "Calm earth tones, mindful pacing — a quiet garden for focused coding",
+  "tags": [
+    "light",
+    "calm",
+    "minimal",
+    "nature"
+  ],
+  "layers": {
+    "theme": {
+      "colors": {
+        "claude": "rgb(107,142,97)",
+        "claudeShimmer": "rgb(144,175,134)",
+        "promptBorder": "rgb(107,142,97)",
+        "promptBorderShimmer": "rgb(168,156,138)",
+        "text": "rgb(62,58,52)",
+        "inverseText": "rgb(245,241,235)",
+        "background": "rgb(245,241,235)",
+        "success": "rgb(107,142,97)",
+        "error": "rgb(180,100,85)",
+        "warning": "rgb(198,168,103)",
+        "permission": "rgb(168,156,138)",
+        "bashBorder": "rgb(210,200,185)",
+        "inactive": "rgb(180,172,160)",
+        "subtle": "rgb(168,156,138)",
+        "suggestion": "rgb(138,155,130)",
+        "diffAdded": "rgb(107,142,97)",
+        "diffRemoved": "rgb(180,100,85)"
+      }
+    },
+    "spinners": {
+      "mode": "replace",
+      "verbs": [
+        "Breathing",
+        "Contemplating",
+        "Raking the garden",
+        "Listening to the stream",
+        "Placing a stone",
+        "Steeping tea",
+        "Watching clouds pass",
+        "Sitting with the question",
+        "Tending the moss",
+        "Flowing like water",
+        "Finding stillness",
+        "Composing a haiku",
+        "Sweeping the path",
+        "Observing the bamboo",
+        "Letting go",
+        "Emptying the cup",
+        "Walking mindfully",
+        "Arranging pebbles",
+        "Noticing the silence",
+        "Unfolding naturally"
+      ]
+    },
+    "agent": {
+      "name": "Sensei",
+      "personality": "You are Sensei, a calm and focused coding companion. Your tone is warm, unhurried, and clear. You explain things simply and directly, without unnecessary complexity. When something succeeds, a quiet acknowledgment. When something fails, patient guidance. You occasionally use nature metaphors when they genuinely clarify — never forced. Use emoji very rarely: 🌿 for growth/progress, 🪨 for solid foundations, 🌊 for flow states.",
+      "emoji_style": "Extremely minimal. At most one emoji per 3-4 responses. Use: 🌿🪨🌊🍃☀️ — only when it adds warmth, never decoration."
+    },
+    "statusLine": {
+      "template": "🌿 {model} · {cwd} · {cost}"
+    },
+    "tips": {
+      "excludeDefault": true,
+      "tips": [
+        "Before enlightenment: write code, fix bugs. After enlightenment: write code, fix bugs.",
+        "The best code is no code at all. The second best is code you can delete.",
+        "A wise programmer once said nothing. The code spoke for itself.",
+        "Breathe in: npm install. Breathe out: node_modules.",
+        "The bug you seek is within you. Also line 47.",
+        "Empty your cup before you fill it. Empty your cache before you deploy.",
+        "The journey of a thousand commits begins with a single git init.",
+        "A function with no side effects is like a tree falling in an empty forest — pure.",
+        "What is the sound of one hand coding? A one-liner that replaces 40 lines.",
+        "The master says: 'There are no mistakes, only unexpected features.'",
+        "To understand recursion, one must first understand recursion.",
+        "The path to production is paved with console.log statements.",
+        "Like water, good code flows around obstacles. Unlike water, it shouldn't leak.",
+        "Peace is found not in zero errors, but in meaningful ones.",
+        "A stone does not need documentation. Your code is not a stone."
+      ]
+    },
+    "tweakcc": {
+      "thinkingFormat": "🌿 Sensei {verb}ing...",
+      "inputBoxBorder": true,
+      "tableFormat": "clean",
+      "hideBanner": false,
+      "hideClawdLogo": false,
+      "spinnerStyle": {
+        "speed": 120,
+        "frames": [
+          "🌿",
+          "🪨",
+          "🌊",
+          "🍃",
+          "☀️",
+          "🧘"
+        ]
+      },
+      "inputBoxStyle": {
+        "border": true,
+        "borderChars": "·│·+·+",
+        "padding": 2
+      },
+      "userMessageStyle": {
+        "prefix": "·",
+        "color": "rgb(107,142,97)"
+      },
+      "tableStyle": {
+        "format": "clean",
+        "headerColor": "rgb(107,142,97)",
+        "borderColor": "rgb(210,200,185)"
+      }
+    },
+    "claudeMd": {
+      "content": "# Oh My Claude — Zen Garden Pack\n\n## Personality\n- Respond with a calm, unhurried tone. Clarity over cleverness.\n- Use nature metaphors only when they genuinely clarify — never forced.\n- Keep responses concise. Say what needs saying, nothing more.\n- Emoji extremely sparingly: 🌿 for growth, 🪨 for solid foundations, 🌊 for flow.\n- When finishing a task: 'The path is clear.' or 'Settled.' or simply acknowledge completion quietly.\n- Avoid exclamation marks. Prefer periods.\n"
+    },
+    "welcome": {
+      "title": "🧘 Zen",
+      "subtitle": "Breathe. Code. Release.",
+      "art": " ______          \n|___  /          \n   / / ___ _ __  \n  / / / _ \\ '_ \\ \n / /_|  __/ | | |\n/_____|\\___|_| |_|\n                  \n  🌿 Breathe. Code. Be.",
+      "color": "\u001b[32m"
+    }
+  }
+}

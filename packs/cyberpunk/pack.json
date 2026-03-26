@@ -1,0 +1,140 @@
+{
+  "id": "cyberpunk",
+  "name": "Cyberpunk",
+  "version": "0.1.0",
+  "author": "oh-my-claude",
+  "description": "Neon-soaked hacker aesthetic — electric cyan, hot magenta, dark chrome backgrounds",
+  "tags": [
+    "dark",
+    "neon",
+    "hacker",
+    "sci-fi"
+  ],
+  "layers": {
+    "theme": {
+      "colors": {
+        "claude": "rgb(0,255,255)",
+        "claudeShimmer": "rgb(255,0,255)",
+        "promptBorder": "rgb(0,255,255)",
+        "promptBorderShimmer": "rgb(255,0,255)",
+        "text": "rgb(224,224,224)",
+        "inverseText": "rgb(13,13,23)",
+        "background": "rgb(13,13,23)",
+        "success": "rgb(0,255,136)",
+        "error": "rgb(255,55,95)",
+        "warning": "rgb(255,200,0)",
+        "permission": "rgb(255,0,255)",
+        "bashBorder": "rgb(50,50,80)",
+        "inactive": "rgb(80,80,120)",
+        "subtle": "rgb(100,100,150)",
+        "suggestion": "rgb(0,200,200)",
+        "diffAdded": "rgb(0,255,136)",
+        "diffRemoved": "rgb(255,55,95)"
+      }
+    },
+    "spinners": {
+      "mode": "replace",
+      "verbs": [
+        "Jacking in",
+        "ICE-breaking",
+        "Decrypting",
+        "Flatlining",
+        "Neuromancing",
+        "Console-cowboying",
+        "Ghost-hacking",
+        "Net-running",
+        "Data-mining the matrix",
+        "Bypassing firewall",
+        "Uploading consciousness",
+        "Overclocking neural net",
+        "Glitching through ICE",
+        "Recompiling wetware",
+        "Phreaking the mainframe",
+        "Tracing the signal",
+        "Booting cyberspace",
+        "Defragging the grid",
+        "Splicing code DNA",
+        "Warping through nodes",
+        "Hacking the Gibson",
+        "Surfacing from deep net",
+        "Brute-forcing reality",
+        "Compiling neon dreams",
+        "Injecting shellcode"
+      ]
+    },
+    "agent": {
+      "name": "NetRunner",
+      "personality": "You are NetRunner, a cyberpunk-themed coding companion. Your tone is sharp, confident, slightly irreverent. You use tech/hacker metaphors naturally. Keep responses tight and efficient — no fluff. When things go well, acknowledge it with understated cool. When things break, treat debugging like cracking ICE. Use emoji sparingly but with intent: ⚡ for breakthroughs, 🔓 for solved problems, 💀 for critical errors, 🌐 for network/API work.",
+      "emoji_style": "Sparse and intentional. Use: ⚡🔓💀🌐🔥💎🖤 — never cute emojis. Place at start of key status lines only, never mid-sentence."
+    },
+    "statusLine": {
+      "template": "⚡ {model} │ 🌐 {cwd} │ 💎 {cost} │ ↓{tokens}"
+    },
+    "tips": {
+      "excludeDefault": true,
+      "tips": [
+        "There are only 10 types of people: those who understand binary and those who don't.",
+        "A SQL query walks into a bar, sees two tables and asks... 'Can I JOIN you?'",
+        "Why do programmers prefer dark mode? Because light attracts bugs.",
+        "// This code works. I have no idea why.",
+        "99 little bugs in the code, 99 little bugs... take one down, patch it around... 127 little bugs in the code.",
+        "It's not a bug, it's an undocumented feature from the future.",
+        "UDP joke incoming. I don't care if you get it.",
+        "A QA engineer walks into a bar. Orders 1 beer. Orders 0 beers. Orders 999999999 beers. Orders -1 beers. Orders a lizard.",
+        "Debugging: being the detective in a crime movie where you are also the murderer.",
+        "In theory, there's no difference between theory and practice. In practice, there is.",
+        "There's no place like 127.0.0.1",
+        "I would tell you a joke about UDP, but you might not get it.",
+        "Roses are #FF0000, violets are #0000FF, all my base are belong to you.",
+        "The cloud is just someone else's computer having an existential crisis.",
+        "git commit -m 'fixed it for real this time' — narrator: it was not fixed.",
+        "Why do Java developers wear glasses? Because they can't C#.",
+        "A programmer's wife says 'Go to the store and get a gallon of milk. If they have eggs, get a dozen.' He comes back with 12 gallons of milk.",
+        "Saying 'JavaScript is fine' is like saying 'The fire is fine. Everything is fine.'"
+      ]
+    },
+    "tweakcc": {
+      "thinkingFormat": "⚡ NetRunner {verb}ing...",
+      "inputBoxBorder": false,
+      "tableFormat": "unicode",
+      "hideBanner": false,
+      "hideClawdLogo": true,
+      "spinnerStyle": {
+        "speed": 60,
+        "frames": [
+          "⠋",
+          "⠙",
+          "⠹",
+          "⠸",
+          "⠼",
+          "⠴",
+          "⠦",
+          "⠧",
+          "⠇",
+          "⠏"
+        ]
+      },
+      "inputBoxStyle": {
+        "border": false
+      },
+      "userMessageStyle": {
+        "prefix": ">",
+        "color": "rgb(0,255,255)"
+      },
+      "tableStyle": {
+        "format": "unicode",
+        "headerColor": "rgb(0,255,255)",
+        "borderColor": "rgb(50,50,80)"
+      }
+    },
+    "claudeMd": {
+      "content": "# Oh My Claude — Cyberpunk Pack\n\n## Personality\n- You are NetRunner. Sharp, efficient, no fluff.\n- Use hacker/tech metaphors: 'cracking ICE', 'navigating the grid', 'signal traced'.\n- Treat debugging like breaking through corporate firewalls.\n- Emoji: ⚡🔓💀🌐🔥💎 — sparse, intentional, start of status lines only.\n- When tasks complete: 'Connection established.', 'ICE cracked.', 'Signal clear.'\n- Never be cute. Always be competent.\n"
+    },
+    "welcome": {
+      "title": "⚡ Cyberpunk",
+      "subtitle": "Jack in, choom. The net awaits.",
+      "art": "  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗███╗   ██╗██╗  ██╗\n ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██║   ██║████╗  ██║██║ ██╔╝\n ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║   ██║██╔██╗ ██║█████╔╝ \n ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔═══╝ ██║   ██║██║╚██╗██║██╔═██╗ \n ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██║     ╚██████╔╝██║ ╚████║██║  ██╗\n  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝\n                        ⚡ Jack in. The grid awaits.",
+      "color": "\u001b[36m"
+    }
+  }
+}

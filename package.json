@@ -1,0 +1,37 @@
+{
+  "name": "oh-my-claude-cli",
+  "version": "0.4.2",
+  "description": "Theme packs for Claude Code — colors, spinner verbs, agent personalities, and status lines bundled into one-command installs.",
+  "type": "module",
+  "bin": {
+    "oh-my-claude-cli": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node --test src/__tests__/"
+  },
+  "keywords": [
+    "claude-code",
+    "theme",
+    "spinner-verbs",
+    "cli",
+    "customization",
+    "terminal"
+  ],
+  "license": "MIT",
+  "author": "LAB3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leeknowsai/oh-my-claude"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "src/",
+    "packs/",
+    "local-dev-jokes/",
+    "pack-schema.json",
+    "README.md"
+  ]
+}

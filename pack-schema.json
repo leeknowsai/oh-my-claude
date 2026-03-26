@@ -1,0 +1,243 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Oh My Claude Pack",
+  "description": "Theme pack schema for Oh My Claude — bundles colors, spinner verbs, agent personality, and status line into a single installable unit.",
+  "type": "object",
+  "required": ["id", "name", "version", "author", "description", "layers"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique pack identifier (kebab-case)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "author": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "description": "One-line description shown in pack list"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "layers": {
+      "type": "object",
+      "properties": {
+        "theme": {
+          "$ref": "#/definitions/ThemeLayer"
+        },
+        "spinners": {
+          "$ref": "#/definitions/SpinnersLayer"
+        },
+        "agent": {
+          "$ref": "#/definitions/AgentLayer"
+        },
+        "statusLine": {
+          "$ref": "#/definitions/StatusLineLayer"
+        },
+        "tips": {
+          "$ref": "#/definitions/TipsLayer"
+        },
+        "tweakcc": {
+          "$ref": "#/definitions/TweakccLayer"
+        },
+        "claudeMd": {
+          "$ref": "#/definitions/ClaudeMdLayer"
+        },
+        "welcome": {
+          "$ref": "#/definitions/WelcomeLayer"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ThemeLayer": {
+      "type": "object",
+      "description": "Color theme — compatible with tweakcc/claude-code-themes format",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "properties": {
+            "claude": { "type": "string" },
+            "claudeShimmer": { "type": "string" },
+            "promptBorder": { "type": "string" },
+            "promptBorderShimmer": { "type": "string" },
+            "text": { "type": "string" },
+            "inverseText": { "type": "string" },
+            "background": { "type": "string" },
+            "success": { "type": "string" },
+            "error": { "type": "string" },
+            "warning": { "type": "string" },
+            "permission": { "type": "string" },
+            "bashBorder": { "type": "string" },
+            "inactive": { "type": "string" },
+            "subtle": { "type": "string" },
+            "suggestion": { "type": "string" },
+            "diffAdded": { "type": "string" },
+            "diffRemoved": { "type": "string" }
+          }
+        }
+      }
+    },
+    "SpinnersLayer": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["replace", "append"],
+          "default": "append"
+        },
+        "verbs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 10,
+          "description": "Themed spinner verb phrases"
+        }
+      },
+      "required": ["mode", "verbs"]
+    },
+    "AgentLayer": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Agent display name"
+        },
+        "personality": {
+          "type": "string",
+          "description": "System prompt personality instructions for the agent"
+        },
+        "emoji_style": {
+          "type": "string",
+          "description": "Emoji usage guidelines — which emojis to prefer, frequency, placement"
+        }
+      },
+      "required": ["name", "personality"]
+    },
+    "StatusLineLayer": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "type": "string",
+          "description": "Status line template string"
+        }
+      }
+    },
+    "TipsLayer": {
+      "type": "object",
+      "description": "Custom spinner tips (jokes, quotes, fun facts) shown while Claude is thinking",
+      "properties": {
+        "excludeDefault": {
+          "type": "boolean",
+          "default": true,
+          "description": "If true, only show custom tips. If false, mix with defaults."
+        },
+        "tips": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 5,
+          "description": "Array of tip/joke strings"
+        }
+      },
+      "required": ["tips"]
+    },
+    "TweakccLayer": {
+      "type": "object",
+      "description": "tweakcc-specific patches — applied when tweakcc is detected. Controls thinking format, input box style, table format, spinner animation.",
+      "properties": {
+        "thinkingFormat": {
+          "type": "string",
+          "description": "Custom thinking format string, e.g. '🔥 Chef đang {verb}...' or '⚡ {verb}ing the matrix...'"
+        },
+        "inputBoxBorder": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show/hide the ASCII border on the input box"
+        },
+        "tableFormat": {
+          "type": "string",
+          "enum": ["default", "unicode", "ascii", "clean"],
+          "description": "Table rendering style"
+        },
+        "spinnerStyle": {
+          "type": "object",
+          "properties": {
+            "speed": { "type": "number", "description": "Animation speed in ms" },
+            "frames": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "hideBanner": {
+          "type": "boolean",
+          "default": false,
+          "description": "Hide the startup ASCII banner"
+        },
+        "hideClawdLogo": {
+          "type": "boolean",
+          "default": false,
+          "description": "Hide the startup Clawd logo"
+        },
+        "inputBoxStyle": {
+          "type": "object",
+          "description": "Input box visual style — border characters and padding (tweakcc)",
+          "properties": {
+            "border": { "type": "boolean", "default": true },
+            "borderChars": { "type": "string", "description": "6 chars: horizontal, vertical, top-left, top-right, bottom-left, bottom-right" },
+            "padding": { "type": "number", "default": 1 }
+          }
+        },
+        "userMessageStyle": {
+          "type": "object",
+          "description": "User message display style — prefix and color (tweakcc)",
+          "properties": {
+            "prefix": { "type": "string", "description": "Prefix character before user messages" },
+            "color": { "type": "string", "description": "RGB color string for user messages" }
+          }
+        },
+        "tableStyle": {
+          "type": "object",
+          "description": "Table rendering style with colors (tweakcc)",
+          "properties": {
+            "format": { "type": "string", "enum": ["default", "unicode", "ascii", "clean"] },
+            "headerColor": { "type": "string" },
+            "borderColor": { "type": "string" }
+          }
+        }
+      }
+    },
+    "ClaudeMdLayer": {
+      "type": "object",
+      "description": "Personality injection via ~/.claude/CLAUDE.md — adds themed instructions that Claude reads on every session.",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Markdown content to append to user CLAUDE.md"
+        }
+      },
+      "required": ["content"]
+    },
+    "WelcomeLayer": {
+      "type": "object",
+      "description": "Custom ASCII art welcome message displayed via a startup hook.",
+      "properties": {
+        "art": {
+          "type": "string",
+          "description": "ASCII art string (multi-line)"
+        },
+        "color": {
+          "type": "string",
+          "description": "ANSI color code for the art, e.g. '\\033[36m' for cyan"
+        }
+      },
+      "required": ["art"]
+    }
+  }
+}

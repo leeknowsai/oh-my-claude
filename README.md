@@ -1,4 +1,6 @@
-# Coding with Claude is stressful. Make yourself smile while Claude is thinking.
+# oh-my-claude
+
+## Coding with Claude is stressful. Make yourself smile while Claude is thinking.
 
 Jokes, spinners, personalities, and vibes for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Because staring at "Thinking..." 10,000 times a day is a crime against developers.
 

@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node src/cli.js",
-    "test": "node --test src/__tests__/"
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "claude-code",
@@ -33,5 +34,8 @@
     "local-dev-jokes/",
     "pack-schema.json",
     "README.md"
-  ]
+  ],
+  "devDependencies": {
+    "vitest": "^4.1.2"
+  }
 }

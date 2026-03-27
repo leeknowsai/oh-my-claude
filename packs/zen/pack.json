@@ -119,6 +119,18 @@
     "switchAgent": "Find your sensei:",
     "inAgentSelector": "in the dojo",
     "tryAnother": "Explore other gardens:",
-    "resetDefaults": "Return to beginner's mind:"
+    "resetDefaults": "Return to beginner's mind:",
+    "howToUse": "The path of oh-my-claude",
+    "installed": "Garden planted",
+    "jokesInYourLang": "meditations loaded",
+    "themedVerbs": "mindful verbs",
+    "selectAgent": "find your sensei in Claude Code agent picker",
+    "vibePacks": "OTHER GARDENS",
+    "switchAnytime": "wander freely",
+    "commands": "PATHS",
+    "cmdInstall": "Plant a different garden",
+    "cmdPreview": "Contemplate before planting",
+    "cmdList": "See all gardens",
+    "cmdReset": "Return to beginner's mind"
   }
 }

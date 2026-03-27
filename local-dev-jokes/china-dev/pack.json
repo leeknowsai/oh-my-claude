@@ -160,6 +160,18 @@
     "switchAgent": "切换agent：找到",
     "inAgentSelector": "在agent列表里",
     "tryAnother": "试试其他pack：",
-    "resetDefaults": "恢复默认："
+    "resetDefaults": "恢复默认：",
+    "howToUse": "oh-my-claude 使用指南",
+    "installed": "已安装",
+    "jokesInYourLang": "条中文笑话",
+    "themedVerbs": "个中文spinner动词",
+    "selectAgent": "在Claude Code的agent列表中选择",
+    "vibePacks": "其他主题包",
+    "switchAnytime": "随时切换",
+    "commands": "命令",
+    "cmdInstall": "换个主题包",
+    "cmdPreview": "先看看再装",
+    "cmdList": "看看都有啥",
+    "cmdReset": "恢复默认（别啊）"
   }
 }

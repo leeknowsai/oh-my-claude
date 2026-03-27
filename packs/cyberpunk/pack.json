@@ -127,6 +127,18 @@
     "switchAgent": "Switch persona: find",
     "inAgentSelector": "in your deck",
     "tryAnother": "Browse more chrome:",
-    "resetDefaults": "Wipe to factory:"
+    "resetDefaults": "Wipe to factory:",
+    "howToUse": "How to operate your cyberdeck",
+    "installed": "Payload active",
+    "jokesInYourLang": "neural jokes loaded",
+    "themedVerbs": "hacking sequences",
+    "selectAgent": "jack in via Claude Code agent picker",
+    "vibePacks": "CHROME UPGRADES",
+    "switchAnytime": "swap anytime, choomba",
+    "commands": "TERMINAL OPS",
+    "cmdInstall": "Flash new chrome",
+    "cmdPreview": "Scan before flashing",
+    "cmdList": "Browse all chrome",
+    "cmdReset": "Factory wipe"
   }
 }

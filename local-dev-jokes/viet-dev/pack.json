@@ -213,6 +213,18 @@
     "switchAgent": "Đổi agent: tìm",
     "inAgentSelector": "trong danh sách agent",
     "tryAnother": "Thử pack khác:",
-    "resetDefaults": "Reset về mặc định:"
+    "resetDefaults": "Reset về mặc định:",
+    "howToUse": "Cách xài oh-my-claude",
+    "installed": "Đã cài",
+    "jokesInYourLang": "câu jokes tiếng Việt",
+    "themedVerbs": "spinner verbs tiếng Việt",
+    "selectAgent": "chọn trong danh sách agent của Claude Code",
+    "vibePacks": "CÁC PACK KHÁC",
+    "switchAnytime": "đổi thoải mái",
+    "commands": "CÁC LỆNH",
+    "cmdInstall": "Đổi sang pack khác",
+    "cmdPreview": "Xem trước rồi hẵng cài",
+    "cmdList": "Xem tất cả các pack",
+    "cmdReset": "Reset về mặc định (buồn lắm đừng)"
   }
 }

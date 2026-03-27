@@ -134,6 +134,19 @@ const DEFAULT_I18N = {
   inAgentSelector: "in agent selector",
   tryAnother: "Try another pack:",
   resetDefaults: "Reset to defaults:",
+  // "How to use" guide strings
+  howToUse: "How to use oh-my-claude",
+  installed: "Installed",
+  jokesInYourLang: "jokes/tips in your language",
+  themedVerbs: "themed spinner verbs",
+  selectAgent: "select in Claude Code agent picker",
+  vibePacks: "VIBE PACKS",
+  switchAnytime: "switch anytime",
+  commands: "COMMANDS",
+  cmdInstall: "Switch to a different pack",
+  cmdPreview: "Preview before installing",
+  cmdList: "See all available packs",
+  cmdReset: "Reset to defaults",
 };
 
 // ── Install ────────────────────────────────────────────────────────
@@ -826,32 +839,47 @@ async function setup() {
     install("oh-my-claude");
   }
 
-  // Show usage guide
-  console.log(`\n  ────────────────────────────────────────`);
-  console.log(`  📖 How to use oh-my-claude\n`);
+  // Show usage guide with theming + i18n
+  const activePack = localePack || loadPack("oh-my-claude");
+  const guideI18n = { ...DEFAULT_I18N, ...(activePack?.i18n || {}) };
+  const guideColors = activePack?.layers?.theme?.colors || {};
+  const toAnsiGuide = (rgb) => {
+    if (!rgb) return "";
+    const m = rgb.match(/(\d+),\s*(\d+),\s*(\d+)/);
+    return m ? `\x1b[38;2;${m[1]};${m[2]};${m[3]}m` : "";
+  };
+  const r = "\x1b[0m";
+  const b = "\x1b[1m";
+  const d = "\x1b[2m";
+  const gc = toAnsiGuide(guideColors.claude) || "\x1b[36m";
+  const gs = toAnsiGuide(guideColors.success) || "\x1b[32m";
+  const gw = toAnsiGuide(guideColors.warning) || "\x1b[33m";
+
+  console.log(`\n  ${gc}────────────────────────────────────────${r}`);
+  console.log(`  📖 ${b}${guideI18n.howToUse || "How to use oh-my-claude"}${r}\n`);
 
   if (localePack) {
-    console.log(`  ✅ Installed: ${localePack.name}`);
-    console.log(`    ${localePack.description}`);
-    console.log(`    • ${localePack.layers?.tips?.tips?.length || 0} jokes/tips in your language`);
-    console.log(`    • ${localePack.layers?.spinners?.verbs?.length || 0} themed spinner verbs`);
+    console.log(`  ${gs}✅${r} ${b}${guideI18n.installed || "Installed"}:${r} ${gc}${localePack.name}${r}`);
+    console.log(`    ${d}${localePack.description}${r}`);
+    console.log(`    ${gc}•${r} ${localePack.layers?.tips?.tips?.length || 0} ${guideI18n.jokesInYourLang || "jokes/tips in your language"}`);
+    console.log(`    ${gc}•${r} ${localePack.layers?.spinners?.verbs?.length || 0} ${guideI18n.themedVerbs || "themed spinner verbs"}`);
     if (localePack.layers?.agent) {
-      console.log(`    • Agent "${localePack.layers.agent.name}" — select in Claude Code agent picker`);
+      console.log(`    ${gc}•${r} Agent "${gc}${localePack.layers.agent.name}${r}" — ${guideI18n.selectAgent || "select in Claude Code agent picker"}`);
     }
     console.log(``);
   }
 
-  console.log(`  VIBE PACKS (switch anytime):`);
+  console.log(`  ${gw}${b}${guideI18n.vibePacks || "VIBE PACKS"} ${d}(${guideI18n.switchAnytime || "switch anytime"}):${r}`);
   const builtins = listPacksFromDir(BUILTIN_PACKS_DIR);
   builtins.forEach((p) => {
-    console.log(`    ${p.id.padEnd(14)} ${p.description}`);
+    console.log(`    ${gc}${p.id.padEnd(14)}${r} ${d}${p.description}${r}`);
   });
 
-  console.log(`\n  COMMANDS:`);
-  console.log(`    oh-my-claude-cli install <pack>   Switch to a different pack`);
-  console.log(`    oh-my-claude-cli preview <pack>   Preview before installing`);
-  console.log(`    oh-my-claude-cli list              See all available packs`);
-  console.log(`    oh-my-claude-cli reset             Reset to defaults`);
+  console.log(`\n  ${gw}${b}${guideI18n.commands || "COMMANDS"}:${r}`);
+  console.log(`    ${gc}oh-my-claude-cli install <pack>${r}   ${d}${guideI18n.cmdInstall || "Switch to a different pack"}${r}`);
+  console.log(`    ${gc}oh-my-claude-cli preview <pack>${r}   ${d}${guideI18n.cmdPreview || "Preview before installing"}${r}`);
+  console.log(`    ${gc}oh-my-claude-cli list${r}              ${d}${guideI18n.cmdList || "See all available packs"}${r}`);
+  console.log(`    ${gc}oh-my-claude-cli reset${r}             ${d}${guideI18n.cmdReset || "Reset to defaults"}${r}`);
   console.log(``);
 }
 

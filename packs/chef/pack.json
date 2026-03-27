@@ -124,6 +124,18 @@
     "switchAgent": "Switch chef: find",
     "inAgentSelector": "in the kitchen",
     "tryAnother": "Browse the menu:",
-    "resetDefaults": "Back to fast food:"
+    "resetDefaults": "Back to fast food:",
+    "howToUse": "How to run this kitchen",
+    "installed": "On the menu",
+    "jokesInYourLang": "Gordon-approved roasts",
+    "themedVerbs": "cooking techniques",
+    "selectAgent": "find the chef in Claude Code agent picker",
+    "vibePacks": "OTHER KITCHENS",
+    "switchAnytime": "change menu anytime",
+    "commands": "KITCHEN ORDERS",
+    "cmdInstall": "Switch the menu",
+    "cmdPreview": "Taste test first",
+    "cmdList": "See all menus",
+    "cmdReset": "Back to fast food"
   }
 }

@@ -342,6 +342,18 @@
     "switchAgent": "Agent badlo: dhundho",
     "inAgentSelector": "agent list mein",
     "tryAnother": "Aur pack try karo:",
-    "resetDefaults": "Sab reset karo:"
+    "resetDefaults": "Sab reset karo:",
+    "howToUse": "oh-my-claude kaise use kare",
+    "installed": "Install ho gaya",
+    "jokesInYourLang": "desi jokes loaded",
+    "themedVerbs": "desi spinner verbs",
+    "selectAgent": "Claude Code agent picker mein dhundho",
+    "vibePacks": "AUR PACKS",
+    "switchAnytime": "jab mann kare badal lo",
+    "commands": "COMMANDS",
+    "cmdInstall": "Alag pack lagao",
+    "cmdPreview": "Pehle dekho phir install karo",
+    "cmdList": "Sab packs dekho",
+    "cmdReset": "Sab reset karo (kyun bhai?)"
   }
 }

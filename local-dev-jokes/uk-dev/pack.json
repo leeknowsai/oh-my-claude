@@ -342,6 +342,18 @@
     "switchAgent": "Switch agent: look for",
     "inAgentSelector": "in the agent selector, please",
     "tryAnother": "Fancy another pack?",
-    "resetDefaults": "Back to boring defaults:"
+    "resetDefaults": "Back to boring defaults:",
+    "howToUse": "How to use oh-my-claude, if you please",
+    "installed": "Installed, rather nicely",
+    "jokesInYourLang": "jolly good jokes loaded",
+    "themedVerbs": "properly British spinner verbs",
+    "selectAgent": "kindly select in Claude Code agent picker",
+    "vibePacks": "OTHER PACKS",
+    "switchAnytime": "switch at your leisure",
+    "commands": "COMMANDS",
+    "cmdInstall": "Switch to a different pack, if you fancy",
+    "cmdPreview": "Have a peek before installing",
+    "cmdList": "See what's available",
+    "cmdReset": "Back to boring defaults, sorry"
   }
 }

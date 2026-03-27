@@ -292,6 +292,18 @@
     "switchAgent": "Switch agent: look for",
     "inAgentSelector": "in agent selector",
     "tryAnother": "Try another pack:",
-    "resetDefaults": "Reset to defaults:"
+    "resetDefaults": "Reset to defaults:",
+    "howToUse": "How to use oh-my-claude",
+    "installed": "Installed",
+    "jokesInYourLang": "all-American jokes loaded",
+    "themedVerbs": "themed spinner verbs",
+    "selectAgent": "select in Claude Code agent picker",
+    "vibePacks": "VIBE PACKS",
+    "switchAnytime": "switch anytime, no cap",
+    "commands": "COMMANDS",
+    "cmdInstall": "Switch to a different pack",
+    "cmdPreview": "Preview before committing",
+    "cmdList": "See all available packs",
+    "cmdReset": "Reset to defaults (why tho)"
   }
 }

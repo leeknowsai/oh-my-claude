@@ -119,6 +119,18 @@
     "switchAgent": "Find yer captain:",
     "inAgentSelector": "on the crew roster",
     "tryAnother": "Browse more treasure:",
-    "resetDefaults": "Abandon ship:"
+    "resetDefaults": "Abandon ship:",
+    "howToUse": "The Pirate's Guide to oh-my-claude",
+    "installed": "In the hold",
+    "jokesInYourLang": "sea shanties loaded",
+    "themedVerbs": "sailing maneuvers",
+    "selectAgent": "find yer captain in Claude Code crew roster",
+    "vibePacks": "OTHER SHIPS",
+    "switchAnytime": "change vessel anytime, matey",
+    "commands": "CAPTAIN'S ORDERS",
+    "cmdInstall": "Board a different ship",
+    "cmdPreview": "Use the spyglass first",
+    "cmdList": "Survey the fleet",
+    "cmdReset": "Abandon ship"
   }
 }

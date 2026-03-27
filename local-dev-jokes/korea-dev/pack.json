@@ -160,6 +160,18 @@
     "switchAgent": "에이전트 전환:",
     "inAgentSelector": "에이전트 목록에서 찾기",
     "tryAnother": "다른 팩 써보기:",
-    "resetDefaults": "기본값으로 초기화:"
+    "resetDefaults": "기본값으로 초기화:",
+    "howToUse": "oh-my-claude 사용법",
+    "installed": "설치됨",
+    "jokesInYourLang": "개 한국어 개그",
+    "themedVerbs": "개 한국어 spinner 동사",
+    "selectAgent": "Claude Code 에이전트 목록에서 선택",
+    "vibePacks": "다른 팩들",
+    "switchAnytime": "언제든 바꿔",
+    "commands": "명령어",
+    "cmdInstall": "다른 팩으로 갈아타기",
+    "cmdPreview": "설치 전에 미리보기",
+    "cmdList": "전체 팩 보기",
+    "cmdReset": "초기화 (이러지 마...)"
   }
 }

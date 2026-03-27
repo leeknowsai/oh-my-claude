@@ -160,6 +160,18 @@
     "switchAgent": "Agent wechseln: suche",
     "inAgentSelector": "in der Agent-Liste",
     "tryAnother": "Anderes Pack probieren:",
-    "resetDefaults": "Zurück auf Werkseinstellungen:"
+    "resetDefaults": "Zurück auf Werkseinstellungen:",
+    "howToUse": "oh-my-claude Bedienungsanleitung",
+    "installed": "Installiert",
+    "jokesInYourLang": "deutsche Witze geladen",
+    "themedVerbs": "deutsche Spinner-Verben",
+    "selectAgent": "im Claude Code Agent-Picker auswählen",
+    "vibePacks": "ANDERE PACKS",
+    "switchAnytime": "jederzeit wechseln",
+    "commands": "BEFEHLE",
+    "cmdInstall": "Anderes Pack installieren",
+    "cmdPreview": "Erst gucken, dann installieren",
+    "cmdList": "Alle Packs anzeigen",
+    "cmdReset": "Zurück auf Werkseinstellungen"
   }
 }

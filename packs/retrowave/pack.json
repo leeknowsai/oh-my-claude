@@ -120,6 +120,18 @@
     "switchAgent": "Switch DJ: find",
     "inAgentSelector": "in the booth",
     "tryAnother": "Browse more tapes:",
-    "resetDefaults": "Eject cassette:"
+    "resetDefaults": "Eject cassette:",
+    "howToUse": "oh-my-claude User Manual (1987 Edition)",
+    "installed": "Now playing",
+    "jokesInYourLang": "synthwave tracks loaded",
+    "themedVerbs": "retro sequences",
+    "selectAgent": "find the DJ in Claude Code agent picker",
+    "vibePacks": "OTHER MIXTAPES",
+    "switchAnytime": "flip the tape anytime",
+    "commands": "TAPE DECK CONTROLS",
+    "cmdInstall": "Load a different tape",
+    "cmdPreview": "Preview the track",
+    "cmdList": "Browse the collection",
+    "cmdReset": "Eject cassette"
   }
 }

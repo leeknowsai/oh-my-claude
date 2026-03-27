@@ -2,6 +2,11 @@
 
 ## Stop "Thinking..." x1000. Start getting a good joke.
 
+<p align="center">
+  <img src="assets/preview-us-dev.png" width="420" alt="US Dev preview" />
+  <img src="assets/preview-uk-dev.png" width="420" alt="UK Dev preview" />
+</p>
+
 Jokes, spinners, personalities, and vibes for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Because staring at "Thinking..." 10,000 times a day is a crime against developers.
 
 Like [oh-my-zsh](https://ohmyz.sh), but for your AI.

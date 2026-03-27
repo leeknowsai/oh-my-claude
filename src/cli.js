@@ -448,6 +448,14 @@ function preview(packId) {
   };
   const box = (content) => `  │ ${pad(content, W)} │`;
 
+  // Read version from package.json
+  const pkgJson = JSON.parse(readFileSync(resolve(__dirname, "..", "package.json"), "utf-8"));
+  const version = pkgJson.version;
+  const previewJoke = INSTALL_JOKES[Math.floor(Math.random() * INSTALL_JOKES.length)];
+
+  console.log("");
+  console.log(`  ${accent}${bold}oh-my-claude${reset} ${dim}v${version}${reset}`);
+  console.log(`  ${dim}${previewJoke}${reset}`);
   console.log("");
 
   // ── Top border ──
@@ -567,12 +575,25 @@ function preview(packId) {
 
   // ── Install command ──
   const installCmd = `npx oh-my-claude-cli install ${packId}`;
+  const error = toAnsi(colors.error) || "\x1b[31m";
   console.log(`  ${accent}│${reset}${" ".repeat(W)} ${accent}│${reset}`);
-  console.log(`  ${accent}│${reset}   ${success}▶ ${installCmd}${reset}${" ".repeat(Math.max(0, W - installCmd.length - 4))} ${accent}│${reset}`);
+  console.log(`  ${accent}│${reset}   ${success}▶ ${bold}${installCmd}${reset}${" ".repeat(Math.max(0, W - installCmd.length - 4))} ${accent}│${reset}`);
   console.log(`  ${accent}│${reset}${" ".repeat(W)} ${accent}│${reset}`);
 
   // ── Bottom border ──
   console.log(`  ${accent}└${line()}┘${reset}`);
+
+  // ── Fun footer ──
+  const footerJokes = [
+    "Your terminal deserves better than default gray.",
+    "Life's too short for boring spinners.",
+    "One install away from mass-produced serotonin.",
+    "Warning: colleagues may ask what you installed.",
+    "Clinically proven to reduce deploy anxiety by 3%.",
+    "Pairs well with coffee and existential dread.",
+  ];
+  const footer = footerJokes[Math.floor(Math.random() * footerJokes.length)];
+  console.log(`\n  ${dim}${footer}${reset}`);
   console.log("");
 }
 

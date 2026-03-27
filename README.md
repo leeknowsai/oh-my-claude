@@ -1,6 +1,6 @@
-# oh-my-claude
+# Oh-my-claude: Claude Jokes & Theming
 
-## Coding with Claude is stressful. Make yourself smile while Claude is thinking.
+## Stop "Thinking..." x1000. Start getting a good joke.
 
 Jokes, spinners, personalities, and vibes for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Because staring at "Thinking..." 10,000 times a day is a crime against developers.
 

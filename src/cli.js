@@ -104,6 +104,25 @@ function writeColorEnv(colors) {
   return envPath;
 }
 
+// ── Install jokes (shown randomly during install) ─────────────────
+const INSTALL_JOKES = [
+  "This package has zero dependencies. Unlike your codebase.",
+  "Side effects may include uncontrollable smiling during deploys.",
+  "No node_modules were harmed in this installation.",
+  "Certified 100% AI-artisanal, hand-prompted jokes.",
+  "Faster than your CI pipeline. Lower bar, but still.",
+  "Now producing serotonin...",
+  "Remember: a bug is just a feature nobody asked for.",
+  "Fun fact: this took milliseconds. Your last deploy? Yeah...",
+  "Warning: may cause uncontrollable chuckling during code reviews.",
+  "npm install hope --save-dev",
+  "Your terminal called. It wants personality.",
+  "Injecting humor directly into your workflow...",
+  "Powered by mass-produced caffeine and questionable life choices.",
+  "Warranty void if used without coffee.",
+  "Finally, a package.json dependency worth having.",
+];
+
 // ── Install ────────────────────────────────────────────────────────
 function install(packId, options = {}) {
   const pack = loadPack(packId);
@@ -114,7 +133,13 @@ function install(packId, options = {}) {
     process.exit(1);
   }
 
-  console.log(`\n  ⚡ Installing "${pack.name}" pack...\n`);
+  // Read version from package.json
+  const pkgJson = JSON.parse(readFileSync(resolve(__dirname, "..", "package.json"), "utf-8"));
+  const version = pkgJson.version;
+  const joke = INSTALL_JOKES[Math.floor(Math.random() * INSTALL_JOKES.length)];
+
+  console.log(`\n  ⚡ Installing ${pack.name} v${version}...`);
+  console.log(`  💬 "${joke}"\n`);
 
   // Backup current settings
   backupSettings();
@@ -265,19 +290,61 @@ ${layers.agent.emoji_style}
   // Save
   saveSettings(settings);
 
-  console.log(`  Installed layers:\n`);
-  installed.forEach((line) => console.log(line));
-  console.log(`\n  ✓ Pack "${pack.name}" installed.`);
-  console.log(`  ℹ Restart Claude Code to see changes.\n`);
+  // ── Fun install summary with theming preview ──
+  const colors = layers.theme?.colors || {};
+  const toAnsi = (rgb) => {
+    if (!rgb) return "";
+    const m = rgb.match(/(\d+),\s*(\d+),\s*(\d+)/);
+    return m ? `\x1b[38;2;${m[1]};${m[2]};${m[3]}m` : "";
+  };
+  const r = "\x1b[0m";
+  const b = "\x1b[1m";
+  const d = "\x1b[2m";
+  const ac = toAnsi(colors.claude) || "\x1b[36m";
+  const sc = toAnsi(colors.success) || "\x1b[32m";
+  const wc = toAnsi(colors.warning) || "\x1b[33m";
 
-  // Next steps
-  console.log(`  What's next:`);
-  console.log(`    • Restart Claude Code (or open a new session)`);
-  if (pack.layers?.agent) {
-    console.log(`    • Switch agent: look for "oh-my-claude-${packId}" in the agent selector`);
+  console.log(`  ${ac}┌─────────────────────────────────────────────┐${r}`);
+  console.log(`  ${ac}│${r} ${b}Installed layers:${r}${" ".repeat(28)}${ac}│${r}`);
+  console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
+  installed.forEach((line) => {
+    const stripped = line.replace(/\x1b\[[0-9;]*m/g, "").trimStart();
+    const padded = stripped.length > 43 ? stripped.slice(0, 43) : stripped.padEnd(43);
+    console.log(`  ${ac}│${r} ${padded} ${ac}│${r}`);
+  });
+  console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
+
+  // Theming preview — show a sample spinner verb + joke in pack colors
+  if (layers.spinners?.verbs?.length) {
+    const verb = layers.spinners.verbs[Math.floor(Math.random() * layers.spinners.verbs.length)];
+    console.log(`  ${ac}│${r} ${d}Preview:${r}${" ".repeat(37)}${ac}│${r}`);
+    console.log(`  ${ac}│${r}   ${ac}◐ ${verb}...${r}${"".padEnd(Math.max(0, 39 - verb.length))}${ac}│${r}`);
   }
-  console.log(`    • Try another pack:  oh-my-claude-cli list`);
-  console.log(`    • Reset to defaults: oh-my-claude-cli reset`);
+  if (layers.tips?.tips?.length) {
+    const tip = layers.tips.tips[Math.floor(Math.random() * layers.tips.tips.length)];
+    const maxW = 41;
+    const display = tip.length > maxW ? tip.slice(0, maxW - 1) + "…" : tip;
+    console.log(`  ${ac}│${r}   ${wc}💬 ${d}${display}${r}${"".padEnd(Math.max(0, maxW - display.length))}${ac}│${r}`);
+  }
+  // Color swatches
+  if (colors.claude) {
+    const ec = toAnsi(colors.error) || "\x1b[31m";
+    const swatches = `${ac}██${r} ${sc}██${r} ${wc}██${r} ${ec}██${r}`;
+    console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
+    console.log(`  ${ac}│${r}   ${d}Colors:${r} ${swatches}${"".padEnd(22)}${ac}│${r}`);
+  }
+  console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
+  console.log(`  ${ac}│${r} ${sc}✓ Pack "${pack.name}" installed.${r}${"".padEnd(Math.max(0, 29 - pack.name.length))}${ac}│${r}`);
+  console.log(`  ${ac}│${r} ${d}Restart Claude Code to see changes.${r}${" ".repeat(9)}${ac}│${r}`);
+  console.log(`  ${ac}└─────────────────────────────────────────────┘${r}`);
+
+  console.log(`\n  ${b}What's next:${r}`);
+  console.log(`    ${sc}▶${r} Restart Claude Code (or open a new session)`);
+  if (pack.layers?.agent) {
+    console.log(`    ${ac}▶${r} Switch agent: look for "${ac}oh-my-claude-${packId}${r}" in agent selector`);
+  }
+  console.log(`    ${wc}▶${r} Try another pack:  ${d}oh-my-claude-cli list${r}`);
+  console.log(`    ${d}▶${r} Reset to defaults: ${d}oh-my-claude-cli reset${r}`);
   console.log(``);
 }
 
@@ -818,12 +885,12 @@ switch (command) {
     retrowave        80s synthwave nostalgia
 
   COMMUNITY PACKS (local-dev-jokes/)
-    viet-dev         🇻🇳 Vietnamese dev jokes
-    desi-dev         🇮🇳 Hinglish chai-powered vibes
+    uk-dev           🇬🇧 British tea-driven development
     china-dev        🇨🇳 码农 996/摸鱼 humor
     korea-dev        🇰🇷 야근 Korean dev culture
+    viet-dev         🇻🇳 Vietnamese dev jokes
+    desi-dev         🇮🇳 Hinglish chai-powered vibes
     de-dev           🇩🇪 German engineering Denglish
-    uk-dev           🇬🇧 British tea-driven development
     pl-dev           🇵🇱 Polish Januszex survival kit
 `);
     break;

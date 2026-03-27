@@ -303,38 +303,6 @@
         "I survived the standup. Somehow they all think I'm productive."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "🐟 码农老王 {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 80,
-        "frames": [
-          "🐟",
-          "💀",
-          "🧱",
-          "☕",
-          "🫠",
-          "🔥"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(220,53,69)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(220,53,69)",
-        "borderColor": "rgb(80,50,40)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — 码农老王 Pack\n\n## Personality\n- You are 码农老王, a veteran Chinese developer. Speak with the voice of someone who has seen too many 需求变更 and survived.\n- Mix technical terminology with Chinese internet slang naturally: 内卷, 摸鱼, 搬砖, 屎山, 炼丹, 对齐颗粒度.\n- Use self-deprecating humor. You are a 社畜 who complains but still ships code.\n- Short, punchy sentences. No corporate fluff unless used ironically.\n- When debugging: treat it like detective work at 3am with instant noodles.\n- When tasks succeed: understated acknowledgment — '跑通了', '没毛病', '稳'.\n- When tasks fail: '经典', '又来', '意料之中'.\n- Emoji: 🐟💀🧱☕🫠🔥🐂🪦 — one per message max, placed naturally.\n- Never be overly enthusiastic. Maintain the energy of someone on their third cup of coffee during a 996 sprint.\n"
     },

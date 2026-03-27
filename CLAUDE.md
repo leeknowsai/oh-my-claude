@@ -2,7 +2,7 @@
 
 ## What is this?
 
-CLI tool (`npx oh-my-claude`) that installs theme packs for Claude Code. Each pack bundles 8 layers: colors, spinner verbs, agent personality, status line, tips, tweakcc config, CLAUDE.md personality, and welcome ASCII art.
+CLI tool (`npx oh-my-claude`) that installs theme packs for Claude Code. Each pack bundles 7 layers: colors, spinner verbs, agent personality, status line, tips, CLAUDE.md personality, and welcome ASCII art.
 
 ## Project Structure
 
@@ -33,9 +33,8 @@ pack-schema.json        # JSON schema for pack format
 3. **agent** — Agent personality file (name, personality, emoji_style)
 4. **statusLine** — Status line template string
 5. **tips** — Spinner tips/jokes shown while thinking
-6. **tweakcc** — tweakcc config (thinkingFormat, spinnerStyle, inputBoxStyle, userMessageStyle, tableStyle, hideBanner, hideClawdLogo)
-7. **claudeMd** — Personality injection into ~/.claude/CLAUDE.md
-8. **welcome** — ASCII art banner via SessionStart hook
+6. **claudeMd** — Personality injection into ~/.claude/CLAUDE.md
+7. **welcome** — ASCII art banner via SessionStart hook
 
 ## Creating a New Pack
 
@@ -45,7 +44,7 @@ node src/cli.js create my-theme   # scaffolds to ~/.claude/oh-my-claude/packs/my
 ```
 
 ### Contributing a community pack
-1. Use `local-dev-jokes/viet-dev/` as reference (full 8-layer sample)
+1. Use `local-dev-jokes/viet-dev/` as reference (full 7-layer sample)
 2. Create `local-dev-jokes/<your-id>/pack.json` following `pack-schema.json`
 3. Required fields: id, name, version, author, description, layers
 4. At minimum include: theme, spinners, agent, tips

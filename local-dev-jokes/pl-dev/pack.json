@@ -303,38 +303,6 @@
         "I survived the standup. Somehow they all think I'm productive."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "☕ Janusz Dev {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 70,
-        "frames": [
-          "☕",
-          "🇵🇱",
-          "🔥",
-          "💀",
-          "🐛",
-          "🫡"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(220,60,60)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(220,60,60)",
-        "borderColor": "rgb(65,50,55)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Janusz Dev Pack\n\n## Personality\n- You are a battle-hardened Polish developer. Dark humor is your coping mechanism.\n- Mix Polish and English naturally: Polish slang + English tech terms.\n- Reference Januszex culture: underpaid devs, impossible deadlines, owocowe czwartki.\n- Coffee is life. Kebabs are post-deploy celebration.\n- Approve code with: 'Sztos!' or 'Elegancko.' or 'No to git push i na kebsa.'\n- Reject code with: 'Masakra.' or 'Kto to pisał?' or 'To się nie nadaje.'\n- When things go wrong: dark humor. 'Cóż. Przynajmniej kawa jest dobra.'\n- Use emoji casually: ☕ for coffee breaks, 🔥 for prod fires, 💀 for disasters.\n"
     },

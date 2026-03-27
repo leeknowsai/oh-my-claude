@@ -96,8 +96,7 @@ function listPacks() {
 }
 
 // ── Colors → env vars mapping ──────────────────────────────────────
-// tweakcc uses its own patching, but for non-tweakcc users
-// we write colors as a reference JSON that can be sourced.
+// Write colors as a reference JSON that can be sourced.
 function writeColorEnv(colors) {
   const envPath = join(CLAUDE_HOME, ".oh-my-claude-colors.json");
   writeFileSync(envPath, JSON.stringify(colors, null, 2) + "\n");
@@ -184,11 +183,36 @@ ${layers.agent.emoji_style}
     installed.push(`  🤖 Agent "${layers.agent.name}" → ${agentPath}`);
   }
 
-  // Layer 4: Status line
+  // Layer 4: Status line — generate a bash script from the template
   if (layers.statusLine && !options.skipStatusLine) {
     settings["oh-my-claude"] = settings["oh-my-claude"] || {};
     settings["oh-my-claude"].statusLine = layers.statusLine.template;
-    installed.push(`  📊 Status line template saved`);
+
+    const statusScriptPath = join(CLAUDE_HOME, ".oh-my-claude-statusline.sh");
+    const template = layers.statusLine.template;
+
+    // Build jq expression that replaces {model}, {cwd}, {cost}, {tokens}
+    // jq reads JSON from stdin provided by Claude Code
+    const jqExpr = template
+      .replace(/\{model\}/g, '\\(.model.display_name // "?")')
+      .replace(/\{cwd\}/g, '\\((.workspace.current_dir // ".") | split("/") | last)')
+      .replace(/\{cost\}/g, '\\(if .cost.total_cost_usd then ("$" + (.cost.total_cost_usd * 100 | round / 100 | tostring)) else "$0" end)')
+      .replace(/\{tokens\}/g, '\\((.context_window.total_input_tokens // 0) + (.context_window.total_output_tokens // 0))');
+
+    const statusScript = [
+      `#!/bin/bash`,
+      `# oh-my-claude statusline — generated from template: ${template}`,
+      `jq -r '"${jqExpr}"'`,
+    ].join("\n") + "\n";
+
+    writeFileSync(statusScriptPath, statusScript, { mode: 0o755 });
+
+    settings.statusLine = {
+      type: "command",
+      command: `bash ${statusScriptPath}`,
+    };
+
+    installed.push(`  📊 Status line → ${statusScriptPath}`);
   }
 
   // Layer 5: Tips (jokes/quotes shown while Claude thinks)
@@ -200,9 +224,7 @@ ${layers.agent.emoji_style}
     installed.push(`  😂 Spinner tips → ${layers.tips.tips.length} themed jokes/tips`);
   }
 
-  // Layer 6: tweakcc — skipped (users can install tweakcc separately if desired)
-
-  // Layer 7: CLAUDE.md personality injection
+  // Layer 6: CLAUDE.md personality injection
   if (layers.claudeMd && !options.skipClaudeMd) {
     const claudeMdPath = join(CLAUDE_HOME, "CLAUDE.md");
     const marker = "<!-- oh-my-claude -->";
@@ -357,6 +379,11 @@ function reset() {
   delete settings.spinnerVerbs;
   delete settings.spinnerTipsOverride;
 
+  // Remove statusLine if it points to our generated script
+  if (settings.statusLine?.command?.includes?.("oh-my-claude-statusline")) {
+    delete settings.statusLine;
+  }
+
   // Remove welcome hook commands (but keep the entry if it has other hooks)
   if (settings.hooks?.SessionStart) {
     for (const entry of settings.hooks.SessionStart) {
@@ -378,6 +405,12 @@ function reset() {
   const welcomeScript = join(CLAUDE_HOME, ".oh-my-claude-welcome.sh");
   if (existsSync(welcomeScript)) {
     try { unlinkSync(welcomeScript); } catch {}
+  }
+
+  // Remove statusline script
+  const statusScript = join(CLAUDE_HOME, ".oh-my-claude-statusline.sh");
+  if (existsSync(statusScript)) {
+    try { unlinkSync(statusScript); } catch {}
   }
 
   saveSettings(settings);

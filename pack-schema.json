@@ -47,9 +47,6 @@
         "tips": {
           "$ref": "#/definitions/TipsLayer"
         },
-        "tweakcc": {
-          "$ref": "#/definitions/TweakccLayer"
-        },
         "claudeMd": {
           "$ref": "#/definitions/ClaudeMdLayer"
         },
@@ -62,7 +59,7 @@
   "definitions": {
     "ThemeLayer": {
       "type": "object",
-      "description": "Color theme — compatible with tweakcc/claude-code-themes format",
+      "description": "Color theme — 16 color tokens for Claude Code",
       "properties": {
         "colors": {
           "type": "object",
@@ -149,69 +146,6 @@
         }
       },
       "required": ["tips"]
-    },
-    "TweakccLayer": {
-      "type": "object",
-      "description": "tweakcc-specific patches — applied when tweakcc is detected. Controls thinking format, input box style, table format, spinner animation.",
-      "properties": {
-        "thinkingFormat": {
-          "type": "string",
-          "description": "Custom thinking format string, e.g. '🔥 Chef đang {verb}...' or '⚡ {verb}ing the matrix...'"
-        },
-        "inputBoxBorder": {
-          "type": "boolean",
-          "default": true,
-          "description": "Show/hide the ASCII border on the input box"
-        },
-        "tableFormat": {
-          "type": "string",
-          "enum": ["default", "unicode", "ascii", "clean"],
-          "description": "Table rendering style"
-        },
-        "spinnerStyle": {
-          "type": "object",
-          "properties": {
-            "speed": { "type": "number", "description": "Animation speed in ms" },
-            "frames": { "type": "array", "items": { "type": "string" } }
-          }
-        },
-        "hideBanner": {
-          "type": "boolean",
-          "default": false,
-          "description": "Hide the startup ASCII banner"
-        },
-        "hideClawdLogo": {
-          "type": "boolean",
-          "default": false,
-          "description": "Hide the startup Clawd logo"
-        },
-        "inputBoxStyle": {
-          "type": "object",
-          "description": "Input box visual style — border characters and padding (tweakcc)",
-          "properties": {
-            "border": { "type": "boolean", "default": true },
-            "borderChars": { "type": "string", "description": "6 chars: horizontal, vertical, top-left, top-right, bottom-left, bottom-right" },
-            "padding": { "type": "number", "default": 1 }
-          }
-        },
-        "userMessageStyle": {
-          "type": "object",
-          "description": "User message display style — prefix and color (tweakcc)",
-          "properties": {
-            "prefix": { "type": "string", "description": "Prefix character before user messages" },
-            "color": { "type": "string", "description": "RGB color string for user messages" }
-          }
-        },
-        "tableStyle": {
-          "type": "object",
-          "description": "Table rendering style with colors (tweakcc)",
-          "properties": {
-            "format": { "type": "string", "enum": ["default", "unicode", "ascii", "clean"] },
-            "headerColor": { "type": "string" },
-            "borderColor": { "type": "string" }
-          }
-        }
-      }
     },
     "ClaudeMdLayer": {
       "type": "object",

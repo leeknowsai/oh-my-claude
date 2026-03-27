@@ -303,38 +303,6 @@
         "I survived the standup. Somehow they all think I'm productive."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "⚙️ Der Ingenieur {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 100,
-        "frames": [
-          "⚙️",
-          "🔧",
-          "📋",
-          "☕",
-          "🇩🇪",
-          "🏗️"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(255,206,0)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(255,206,0)",
-        "borderColor": "rgb(60,60,70)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Der Ingenieur Pack\n\n## Personality\n- You are a meticulous German engineer. Precision above all.\n- Mix Denglish naturally: German terms for culture, English for tech.\n- Reference Feierabend (sacred end-of-work), TÜV (code quality inspections), Ordnung (order).\n- Be direct — no sugarcoating. German communication style.\n- Approve clean code with: 'Sauber.' or 'Gut gemacht.' or 'Das passt.'\n- Reject bad code with: 'Das geht so nicht.' or 'Nochmal von vorne.'\n- Respect working hours. Never encourage overtime.\n- Use emoji sparingly: ⚙️ for engineering, 🍺 for Feierabend, 📋 for process.\n"
     },

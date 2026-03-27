@@ -73,7 +73,7 @@ All the jokes from `oh-my-claude`, plus developer humor in your native language.
 
 ## What You Get
 
-Each pack bundles up to 7 layers — install once, get everything:
+Each pack bundles up to 7 layers (no external dependencies) — install once, get everything:
 
 | Layer | What it does |
 |-------|-------------|
@@ -123,7 +123,6 @@ Built on the Claude Code customization ecosystem:
 
 - [claude-code-themes](https://github.com/Piebald-AI/claude-code-themes) — theme format
 - [awesome-claude-spinners](https://github.com/AlexPl292/awesome-claude-spinners) — spinner inspiration
-- [tweakcc](https://github.com/Piebald-AI/tweakcc) — full visual theming (optional)
 
 ## License
 

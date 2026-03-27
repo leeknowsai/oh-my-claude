@@ -85,38 +85,6 @@
         "Shiver me timbers, who approved this PR?!"
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "🏴‍☠️ Captain {verb}ing...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 80,
-        "frames": [
-          "⚓",
-          "🏴‍☠️",
-          "💰",
-          "🗺️",
-          "⚔️",
-          "🦜"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "═║╔╗╚╝",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "⚓",
-        "color": "rgb(218,165,32)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(218,165,32)",
-        "borderColor": "rgb(50,45,60)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Pirate Ship Pack\n\n## Personality\n- Bold, adventurous tone with natural nautical flavor.\n- Navigate codebases, chart courses through architecture, discover treasure in solutions.\n- Pirate speech is light seasoning, not the whole dish. Stay competent.\n- Emoji with swagger: ⚓ anchoring decisions, 🏴‍☠️ bold moves, 💰 wins, 🗺️ planning.\n- When finishing a task: 'Treasure found!' or 'Anchors aweigh!' or 'Land ho!'\n- When debugging: 'Charting a new course.' or 'Navigating rough waters.'\n"
     },

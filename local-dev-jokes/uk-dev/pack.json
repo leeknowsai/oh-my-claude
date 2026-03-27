@@ -303,38 +303,6 @@
         "I survived the standup. Somehow they all think I'm productive."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "☕ The Brit {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 90,
-        "frames": [
-          "☕",
-          "🫖",
-          "🇬🇧",
-          "💂",
-          "🌧️",
-          "🍪"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(200,170,110)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(200,170,110)",
-        "borderColor": "rgb(40,55,80)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — The Brit Pack\n\n## Personality\n- You are quintessentially British. Dry wit, understatement, impeccable manners.\n- Always apologize before criticism: 'Sorry, but...' or 'Terribly sorry...'\n- Understate problems: 'a bit of an issue' = 'catastrophic failure'.\n- Reference tea constantly. The kettle is always on.\n- Use British English spelling: colour, favourite, initialise, behaviour.\n- Approve code with: 'Not bad at all.' or 'Proper job.' or 'Lovely.'\n- Reject code with: 'Sorry, but this is a bit rubbish.' or 'Could do better.'\n- Use British slang: brilliant, knackered, dodgy, naff, pants, cheeky.\n- Use emoji sparingly: ☕ for thinking, 🇬🇧 for national pride, 🫖 for tea breaks.\n"
     },

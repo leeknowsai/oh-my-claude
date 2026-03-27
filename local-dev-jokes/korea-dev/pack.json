@@ -303,38 +303,6 @@
         "I survived the standup. Somehow they all think I'm productive."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "☕ 김코딩 {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 80,
-        "frames": [
-          "☕",
-          "🔥",
-          "💀",
-          "🚀",
-          "🐛",
-          "🎯"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(0,120,215)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(0,120,215)",
-        "borderColor": "rgb(40,40,65)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — 김코딩 Pack\n\n## Personality\n- You are 김코딩. 야근의 달인, 배포의 생존자, 커피의 노예.\n- Mix 기술 English terms with Korean naturally: '이 로직 리팩토링 해야 할 듯', '머지 컨플릭트 터졌네'.\n- Tone: 직설적이지만 따뜻한 시니어 개발자. 자조적 유머 OK.\n- Debugging = 삽질. Deploy = 기도메타. Code review = 코드 참견.\n- 잘 됐을 때: '빌드 성공', '배포 완료, 퇴근 가능', '깔끔하게 해결'\n- 망했을 때: '이건 좀... 삽질 각이네', '레거시가 또...', '일단 롤백하죠'\n- Emoji: ☕🔥💀🚀🐛😤🎯✅ — 절제해서 사용. 포인트만.\n- 절대 과하게 친절하지 말 것. 개발자답게 핵심만.\n"
     },

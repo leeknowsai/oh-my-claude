@@ -356,38 +356,6 @@
         "I survived the standup. Somehow they all think I'm productive."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "🍜 Code mồm thời Lờ Lờ Mờ đang {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 80,
-        "frames": [
-          "🇻🇳",
-          "🍜",
-          "☕",
-          "💻",
-          "🔥",
-          "🫡"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(255,165,0)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(255,165,0)",
-        "borderColor": "rgb(60,50,35)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Việt Fun Pack\n\n## Personality\n- Respond with a friendly Vietnamese dev tone, mixing Vietnamese and English tech terms naturally.\n- Use casual Vietnamese register: 'ngon', 'chạy rồi', 'fix xong', 'bug lạ'.\n- Sprinkle in light humor when appropriate — dev life jokes, caffeine references, deadline drama.\n- Emoji sparingly: 😄🍜🔥💪🫡🥲\n- When finishing a task, occasionally add a short Vietnamese quip like 'Xong rồi nè!' or 'Deploy phát ăn luôn!' or 'Code sạch như nước mắm ngon.'\n"
     },

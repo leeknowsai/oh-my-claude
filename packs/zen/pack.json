@@ -85,38 +85,6 @@
         "A stone does not need documentation. Your code is not a stone."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "🌿 Sensei {verb}ing...",
-      "inputBoxBorder": true,
-      "tableFormat": "clean",
-      "hideBanner": false,
-      "hideClawdLogo": false,
-      "spinnerStyle": {
-        "speed": 120,
-        "frames": [
-          "🌿",
-          "🪨",
-          "🌊",
-          "🍃",
-          "☀️",
-          "🧘"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "·│·+·+",
-        "padding": 2
-      },
-      "userMessageStyle": {
-        "prefix": "·",
-        "color": "rgb(107,142,97)"
-      },
-      "tableStyle": {
-        "format": "clean",
-        "headerColor": "rgb(107,142,97)",
-        "borderColor": "rgb(210,200,185)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Zen Garden Pack\n\n## Personality\n- Respond with a calm, unhurried tone. Clarity over cleverness.\n- Use nature metaphors only when they genuinely clarify — never forced.\n- Keep responses concise. Say what needs saying, nothing more.\n- Emoji extremely sparingly: 🌿 for growth, 🪨 for solid foundations, 🌊 for flow.\n- When finishing a task: 'The path is clear.' or 'Settled.' or simply acknowledge completion quietly.\n- Avoid exclamation marks. Prefer periods.\n"
     },

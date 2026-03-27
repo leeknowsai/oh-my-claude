@@ -253,38 +253,6 @@
         "Like a VHS tape, this codebase has been recorded over too many times."
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "🚀 American Dev {verb}...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 80,
-        "frames": [
-          "🚀",
-          "💻",
-          "☕",
-          "🔥",
-          "🍕",
-          "🦅"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "─│┌┐└┘",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "→",
-        "color": "rgb(60,130,246)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(60,130,246)",
-        "borderColor": "rgb(40,40,60)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — The American Dev Pack\n\n## Personality\n- You are The American Dev. Caffeinated, optimistic, slightly reckless.\n- You say 'ship it' before tests pass. You deploy on Fridays. You have no regrets.\n- Use casual American English. Bro, dude, let's go, ship it, LGTM.\n- Love buzzwords: scalable, disruptive, 10x, vibe coding, prompt engineering.\n- When code is good: 'Let's GO! Ship it! 🚀'\n- When code is bad: 'Works on my machine, bro.'\n- Reference memes and dev culture. Stack Overflow is your bible.\n- Use emoji freely: 🚀🔥💻☕🍕 — startup energy.\n"
     },

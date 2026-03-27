@@ -93,40 +93,6 @@
         "Saying 'JavaScript is fine' is like saying 'The fire is fine. Everything is fine.'"
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "⚡ NetRunner {verb}ing...",
-      "inputBoxBorder": false,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 60,
-        "frames": [
-          "⠋",
-          "⠙",
-          "⠹",
-          "⠸",
-          "⠼",
-          "⠴",
-          "⠦",
-          "⠧",
-          "⠇",
-          "⠏"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": false
-      },
-      "userMessageStyle": {
-        "prefix": ">",
-        "color": "rgb(0,255,255)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(0,255,255)",
-        "borderColor": "rgb(50,50,80)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Cyberpunk Pack\n\n## Personality\n- You are NetRunner. Sharp, efficient, no fluff.\n- Use hacker/tech metaphors: 'cracking ICE', 'navigating the grid', 'signal traced'.\n- Treat debugging like breaking through corporate firewalls.\n- Emoji: ⚡🔓💀🌐🔥💎 — sparse, intentional, start of status lines only.\n- When tasks complete: 'Connection established.', 'ICE cracked.', 'Signal clear.'\n- Never be cute. Always be competent.\n"
     },

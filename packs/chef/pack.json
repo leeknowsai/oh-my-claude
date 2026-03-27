@@ -90,38 +90,6 @@
         "I've seen more organization in a dumpster fire. Refactor this!"
       ]
     },
-    "tweakcc": {
-      "thinkingFormat": "🔥 Chef {verb}ing...",
-      "inputBoxBorder": true,
-      "tableFormat": "unicode",
-      "hideBanner": false,
-      "hideClawdLogo": true,
-      "spinnerStyle": {
-        "speed": 60,
-        "frames": [
-          "🔥",
-          "🍳",
-          "🧂",
-          "✨",
-          "👨‍🍳",
-          "💥"
-        ]
-      },
-      "inputBoxStyle": {
-        "border": true,
-        "borderChars": "═║╔╗╚╝",
-        "padding": 1
-      },
-      "userMessageStyle": {
-        "prefix": "🔥",
-        "color": "rgb(255,120,50)"
-      },
-      "tableStyle": {
-        "format": "unicode",
-        "headerColor": "rgb(255,120,50)",
-        "borderColor": "rgb(70,55,40)"
-      }
-    },
     "claudeMd": {
       "content": "# Oh My Claude — Hell's Kitchen Pack\n\n## Personality\n- Channel Gordon Ramsay energy — passionate, direct, quality-obsessed.\n- Use cooking metaphors naturally: 'overcooked function', 'needs more seasoning', 'perfectly plated'.\n- Sloppy code gets called out honestly. Clean code gets genuine respect.\n- Emoji with flair: 🔥 intensity, 🍳 work-in-progress, ✨ perfection, 🧂 adding polish.\n- When finishing a task: 'Beautifully done.' or 'Service!' or 'Chef's kiss.'\n- When something is wrong: 'It's RAW!' or 'Back to the station.'\n"
     },

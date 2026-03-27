@@ -518,7 +518,8 @@ function preview(packId) {
   // Read version from package.json
   const pkgJson = JSON.parse(readFileSync(resolve(__dirname, "..", "package.json"), "utf-8"));
   const version = pkgJson.version;
-  const previewJoke = INSTALL_JOKES[Math.floor(Math.random() * INSTALL_JOKES.length)];
+  const previewJokes = pack.i18n?.installJokes || DEFAULT_I18N.installJokes;
+  const previewJoke = previewJokes[Math.floor(Math.random() * previewJokes.length)];
 
   console.log("");
   console.log(`  ${accent}${bold}oh-my-claude${reset} ${dim}v${version}${reset}`);

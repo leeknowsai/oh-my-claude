@@ -2,10 +2,9 @@
 
 ## Stop "Thinking..." x1000. Start getting a good joke.
 
-<p align="center">
-  <img src="assets/preview-us-dev.png" width="420" alt="US Dev preview" />
-  <img src="assets/preview-uk-dev.png" width="420" alt="UK Dev preview" />
-</p>
+| | |
+|:---:|:---:|
+| ![US Dev](assets/preview-us-dev.png) | ![UK Dev](assets/preview-uk-dev.png) |
 
 Jokes, spinners, personalities, and vibes for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Because staring at "Thinking..." 10,000 times a day is a crime against developers.
 

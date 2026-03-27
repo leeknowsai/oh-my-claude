@@ -352,5 +352,36 @@
       "art": "   _                                  _                 _\n  | |__    _ __ ___  _   _    ___| | __ _ _   _  __| | ___\n  | '_ \\  | '_ ` _ \\| | | |  / __| |/ _` | | | |/ _` |/ _ \\\n  | | | | | | | | | | |_| | | (__| | (_| | |_| | (_| |  __/\n  |_| |_| |_| |_| |_|\\__, |  \\___|_|\\__,_|\\__,_|\\__,_|\\___|\n                      |___/\n\n  ⚡ 110 spinners. 180+ jokes. All vibes.\n  Make yourself smile while coding.",
       "color": "\u001b[38;2;0;255;255m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "This package has zero dependencies. Unlike your codebase.",
+      "Side effects may include uncontrollable smiling during deploys.",
+      "No node_modules were harmed in this installation.",
+      "Certified 100% AI-artisanal, hand-prompted jokes.",
+      "Faster than your CI pipeline. Lower bar, but still.",
+      "Now producing serotonin...",
+      "Remember: a bug is just a feature nobody asked for.",
+      "Fun fact: this took milliseconds. Your last deploy? Yeah...",
+      "Warning: may cause uncontrollable chuckling during code reviews.",
+      "npm install hope --save-dev",
+      "Your terminal called. It wants personality.",
+      "Injecting humor directly into your workflow...",
+      "Powered by mass-produced caffeine and questionable life choices.",
+      "Warranty void if used without coffee.",
+      "Finally, a package.json dependency worth having."
+    ],
+    "installing": "Installing",
+    "installedLayers": "Installed layers:",
+    "preview": "Preview:",
+    "colors": "Colors:",
+    "packInstalled": "Pack installed. Vibes loaded.",
+    "restart": "Restart Claude Code to see changes.",
+    "whatsNext": "What's next:",
+    "restartHint": "Restart Claude Code (or open a new session)",
+    "switchAgent": "Switch agent: look for",
+    "inAgentSelector": "in agent selector",
+    "tryAnother": "Try another pack:",
+    "resetDefaults": "Reset to defaults:"
   }
 }

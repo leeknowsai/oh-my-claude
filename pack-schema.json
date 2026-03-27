@@ -29,6 +29,25 @@
       "type": "array",
       "items": { "type": "string" }
     },
+    "i18n": {
+      "type": "object",
+      "description": "Localized UI strings for install output — all keys optional, falls back to English",
+      "properties": {
+        "installJokes": { "type": "array", "items": { "type": "string" }, "description": "Random jokes shown during install" },
+        "installing": { "type": "string" },
+        "installedLayers": { "type": "string" },
+        "preview": { "type": "string" },
+        "colors": { "type": "string" },
+        "packInstalled": { "type": "string" },
+        "restart": { "type": "string" },
+        "whatsNext": { "type": "string" },
+        "restartHint": { "type": "string" },
+        "switchAgent": { "type": "string" },
+        "inAgentSelector": { "type": "string" },
+        "tryAnother": { "type": "string" },
+        "resetDefaults": { "type": "string" }
+      }
+    },
     "layers": {
       "type": "object",
       "properties": {

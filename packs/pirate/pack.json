@@ -94,5 +94,31 @@
       "art": " ____  _           _         ____  _     _       \n|  _ \\(_)_ __ __ _| |_ ___  / ___|| |__ (_)_ __  \n| |_) | | '__/ _` | __/ _ \\ \\___ \\| '_ \\| | '_ \\ \n|  __/| | | | (_| | ||  __/  ___) | | | | | |_) |\n|_|   |_|_|  \\__,_|\\__\\___| |____/|_| |_|_| .__/ \n                                           |_|    \n  🏴‍☠️ Arrr! Set sail for code.",
       "color": "\u001b[38;2;218;165;32m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Shiver me timbers, it actually compiled!",
+      "Yo ho ho and a bottle of npm.",
+      "The treasure was the bugs we fixed along the way.",
+      "Dead men tell no tales. Neither do deleted logs.",
+      "Arrr, who needs documentation when ye have courage?",
+      "Walk the plank if yer tests don't pass!",
+      "Aye, the code be shipshape now.",
+      "Blimey, that's more dependencies than a galleon has barnacles.",
+      "Raise the Jolly Roger — we're deploying to production!",
+      "X marks the spot. The X is your cursor."
+    ],
+    "installing": "Plundering",
+    "installedLayers": "Treasure loaded:",
+    "preview": "Spyglass:",
+    "colors": "Loot:",
+    "packInstalled": "Ship is ready. Set sail!",
+    "restart": "Restart yer vessel to see the booty.",
+    "whatsNext": "Chart yer course:",
+    "restartHint": "Restart Claude Code (hoist the sails!)",
+    "switchAgent": "Find yer captain:",
+    "inAgentSelector": "on the crew roster",
+    "tryAnother": "Browse more treasure:",
+    "resetDefaults": "Abandon ship:"
   }
 }

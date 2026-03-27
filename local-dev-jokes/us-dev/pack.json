@@ -262,5 +262,36 @@
       "art": "  _____ _             _                    ___\n |_   _| |__   ___   / \\   _ __ ___   ___|_ _|_ __\n   | | | '_ \\ / _ \\ / _ \\ | '_ ` _ \\ / _ \\| || '_ \\\n   | | | | | |  __// ___ \\| | | | | |  __/| || | | |\n   |_| |_| |_|\\___/_/   \\_\\_| |_| |_|\\___|___|_| |_|\n\n   🚀 Let's GO! Time to ship some code.\n\n   Coffee: loaded. Stack Overflow: open.\n   Prod: probably fine.\n\n   Move fast and break things.",
       "color": "\u001b[38;2;60;130;246m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Works on my machine. Ship it.",
+      "Stack Overflow copy-paste? Never heard of it.",
+      "This package has more personality than your Slack status.",
+      "npm install american-dream --save-dev",
+      "Faster than your standup. Which is 45 minutes, Greg.",
+      "Freedom, liberty, and well-configured terminals.",
+      "Your terminal called. It wants to be great again.",
+      "Warranty void if deployed on a Friday.",
+      "Side effects: uncontrollable high-fiving during deploys.",
+      "Powered by cold brew and unrealistic sprint goals.",
+      "Built different. Literally.",
+      "More stars than your GitHub repo. Roasted.",
+      "Move fast and break things? We move fast and fix vibes.",
+      "This is the way. The deploy way.",
+      "Land of the free, home of the brave deployer."
+    ],
+    "installing": "Installing",
+    "installedLayers": "Installed layers:",
+    "preview": "Preview:",
+    "colors": "Colors:",
+    "packInstalled": "Shipped! Let's gooo.",
+    "restart": "Restart Claude Code to see changes.",
+    "whatsNext": "What's next:",
+    "restartHint": "Restart Claude Code (new session, who dis)",
+    "switchAgent": "Switch agent: look for",
+    "inAgentSelector": "in agent selector",
+    "tryAnother": "Try another pack:",
+    "resetDefaults": "Reset to defaults:"
   }
 }

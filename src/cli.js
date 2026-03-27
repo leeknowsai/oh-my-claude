@@ -103,24 +103,38 @@ function writeColorEnv(colors) {
   return envPath;
 }
 
-// ── Install jokes (shown randomly during install) ─────────────────
-const INSTALL_JOKES = [
-  "This package has zero dependencies. Unlike your codebase.",
-  "Side effects may include uncontrollable smiling during deploys.",
-  "No node_modules were harmed in this installation.",
-  "Certified 100% AI-artisanal, hand-prompted jokes.",
-  "Faster than your CI pipeline. Lower bar, but still.",
-  "Now producing serotonin...",
-  "Remember: a bug is just a feature nobody asked for.",
-  "Fun fact: this took milliseconds. Your last deploy? Yeah...",
-  "Warning: may cause uncontrollable chuckling during code reviews.",
-  "npm install hope --save-dev",
-  "Your terminal called. It wants personality.",
-  "Injecting humor directly into your workflow...",
-  "Powered by mass-produced caffeine and questionable life choices.",
-  "Warranty void if used without coffee.",
-  "Finally, a package.json dependency worth having.",
-];
+// ── Default English UI strings (fallback when pack has no i18n) ────
+const DEFAULT_I18N = {
+  installJokes: [
+    "This package has zero dependencies. Unlike your codebase.",
+    "Side effects may include uncontrollable smiling during deploys.",
+    "No node_modules were harmed in this installation.",
+    "Certified 100% AI-artisanal, hand-prompted jokes.",
+    "Faster than your CI pipeline. Lower bar, but still.",
+    "Now producing serotonin...",
+    "Remember: a bug is just a feature nobody asked for.",
+    "Fun fact: this took milliseconds. Your last deploy? Yeah...",
+    "Warning: may cause uncontrollable chuckling during code reviews.",
+    "npm install hope --save-dev",
+    "Your terminal called. It wants personality.",
+    "Injecting humor directly into your workflow...",
+    "Powered by mass-produced caffeine and questionable life choices.",
+    "Warranty void if used without coffee.",
+    "Finally, a package.json dependency worth having.",
+  ],
+  installing: "Installing",
+  installedLayers: "Installed layers:",
+  preview: "Preview:",
+  colors: "Colors:",
+  packInstalled: "Pack installed.",
+  restart: "Restart Claude Code to see changes.",
+  whatsNext: "What's next:",
+  restartHint: "Restart Claude Code (or open a new session)",
+  switchAgent: "Switch agent: look for",
+  inAgentSelector: "in agent selector",
+  tryAnother: "Try another pack:",
+  resetDefaults: "Reset to defaults:",
+};
 
 // ── Install ────────────────────────────────────────────────────────
 function install(packId, options = {}) {
@@ -135,9 +149,13 @@ function install(packId, options = {}) {
   // Read version from package.json
   const pkgJson = JSON.parse(readFileSync(resolve(__dirname, "..", "package.json"), "utf-8"));
   const version = pkgJson.version;
-  const joke = INSTALL_JOKES[Math.floor(Math.random() * INSTALL_JOKES.length)];
 
-  console.log(`\n  ⚡ Installing ${pack.name} v${version}...`);
+  // Merge pack i18n with defaults
+  const i18n = { ...DEFAULT_I18N, ...(pack.i18n || {}) };
+  const jokes = i18n.installJokes || DEFAULT_I18N.installJokes;
+  const joke = jokes[Math.floor(Math.random() * jokes.length)];
+
+  console.log(`\n  ⚡ ${i18n.installing} ${pack.name} v${version}...`);
   console.log(`  💬 "${joke}"\n`);
 
   // Backup current settings
@@ -327,7 +345,8 @@ ${layers.agent.emoji_style}
   const wc = toAnsi(colors.warning) || "\x1b[33m";
 
   console.log(`  ${ac}┌─────────────────────────────────────────────┐${r}`);
-  console.log(`  ${ac}│${r} ${b}Installed layers:${r}${" ".repeat(28)}${ac}│${r}`);
+  const layersTitle = i18n.installedLayers;
+  console.log(`  ${ac}│${r} ${b}${layersTitle}${r}${" ".repeat(Math.max(0, 45 - layersTitle.length))}${ac}│${r}`);
   console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
   installed.forEach((line) => {
     const stripped = line.replace(/\x1b\[[0-9;]*m/g, "").trimStart();
@@ -339,7 +358,7 @@ ${layers.agent.emoji_style}
   // Theming preview — show a sample spinner verb + joke in pack colors
   if (layers.spinners?.verbs?.length) {
     const verb = layers.spinners.verbs[Math.floor(Math.random() * layers.spinners.verbs.length)];
-    console.log(`  ${ac}│${r} ${d}Preview:${r}${" ".repeat(37)}${ac}│${r}`);
+    console.log(`  ${ac}│${r} ${d}${i18n.preview}${r}${" ".repeat(Math.max(0, 45 - i18n.preview.length))}${ac}│${r}`);
     console.log(`  ${ac}│${r}   ${ac}◐ ${verb}...${r}${"".padEnd(Math.max(0, 39 - verb.length))}${ac}│${r}`);
   }
   if (layers.tips?.tips?.length) {
@@ -353,20 +372,22 @@ ${layers.agent.emoji_style}
     const ec = toAnsi(colors.error) || "\x1b[31m";
     const swatches = `${ac}██${r} ${sc}██${r} ${wc}██${r} ${ec}██${r}`;
     console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
-    console.log(`  ${ac}│${r}   ${d}Colors:${r} ${swatches}${"".padEnd(22)}${ac}│${r}`);
+    console.log(`  ${ac}│${r}   ${d}${i18n.colors}${r} ${swatches}${"".padEnd(Math.max(0, 45 - i18n.colors.length - 13))}${ac}│${r}`);
   }
   console.log(`  ${ac}│${r}${" ".repeat(45)}${ac}│${r}`);
-  console.log(`  ${ac}│${r} ${sc}✓ Pack "${pack.name}" installed.${r}${"".padEnd(Math.max(0, 29 - pack.name.length))}${ac}│${r}`);
-  console.log(`  ${ac}│${r} ${d}Restart Claude Code to see changes.${r}${" ".repeat(9)}${ac}│${r}`);
+  const doneMsg = `✓ ${i18n.packInstalled}`;
+  console.log(`  ${ac}│${r} ${sc}${doneMsg}${r}${" ".repeat(Math.max(0, 45 - doneMsg.length))}${ac}│${r}`);
+  const restartMsg = i18n.restart;
+  console.log(`  ${ac}│${r} ${d}${restartMsg}${r}${" ".repeat(Math.max(0, 45 - restartMsg.length))}${ac}│${r}`);
   console.log(`  ${ac}└─────────────────────────────────────────────┘${r}`);
 
-  console.log(`\n  ${b}What's next:${r}`);
-  console.log(`    ${sc}▶${r} Restart Claude Code (or open a new session)`);
+  console.log(`\n  ${b}${i18n.whatsNext}${r}`);
+  console.log(`    ${sc}▶${r} ${i18n.restartHint}`);
   if (pack.layers?.agent) {
-    console.log(`    ${ac}▶${r} Switch agent: look for "${ac}oh-my-claude-${packId}${r}" in agent selector`);
+    console.log(`    ${ac}▶${r} ${i18n.switchAgent} "${ac}oh-my-claude-${packId}${r}" ${i18n.inAgentSelector}`);
   }
-  console.log(`    ${wc}▶${r} Try another pack:  ${d}oh-my-claude-cli list${r}`);
-  console.log(`    ${d}▶${r} Reset to defaults: ${d}oh-my-claude-cli reset${r}`);
+  console.log(`    ${wc}▶${r} ${i18n.tryAnother}  ${d}oh-my-claude-cli list${r}`);
+  console.log(`    ${d}▶${r} ${i18n.resetDefaults} ${d}oh-my-claude-cli reset${r}`);
   console.log(``);
 }
 

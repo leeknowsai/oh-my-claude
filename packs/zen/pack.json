@@ -94,5 +94,31 @@
       "art": " ______          \n|___  /          \n   / / ___ _ __  \n  / / / _ \\ '_ \\ \n / /_|  __/ | | |\n/_____|\\___|_| |_|\n                  \n  🌿 Breathe. Code. Be.",
       "color": "\u001b[32m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Breathe in... breathe out... npm install.",
+      "The code is already perfect. We just haven't found it yet.",
+      "A bug fixed in haste returns in production.",
+      "The wise dev tests before deploying.",
+      "Be like water — flow around the merge conflict.",
+      "In the garden of code, patience bears the sweetest fruit.",
+      "The terminal is empty. The mind is full.",
+      "One does not rush a deploy. One prepares.",
+      "Silence between keystrokes is also code.",
+      "The greatest refactor is the one not needed."
+    ],
+    "installing": "Cultivating",
+    "installedLayers": "Garden planted:",
+    "preview": "Meditation:",
+    "colors": "Earth tones:",
+    "packInstalled": "Garden is ready. Find your calm.",
+    "restart": "Restart Claude Code. Take a breath first.",
+    "whatsNext": "The path continues:",
+    "restartHint": "Restart Claude Code (mindfully)",
+    "switchAgent": "Find your sensei:",
+    "inAgentSelector": "in the dojo",
+    "tryAnother": "Explore other gardens:",
+    "resetDefaults": "Return to beginner's mind:"
   }
 }

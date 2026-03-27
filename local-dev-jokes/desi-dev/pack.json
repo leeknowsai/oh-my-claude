@@ -312,5 +312,36 @@
       "art": "  ╔═══════════════════════════════════════╗\n  ║   ╦╦ ╦╔═╗╔═╗╔═╗╔╦╗╦ ╦              ║\n  ║   ║║ ║║ ╦╠═╣╠═╣ ║║║ ║              ║\n  ║  ╚╝╚═╝╚═╝╩ ╩╩ ╩═╩╝╚═╝              ║\n  ║   ╔╗ ╦ ╦╔═╗╦                        ║\n  ║   ╠╩╗╠═╣╠═╣║                        ║\n  ║   ╚═╝╩ ╩╩ ╩╩                        ║\n  ╠═══════════════════════════════════════╣\n  ║  Chai piyo, code karo, bugs hatao.   ║\n  ║  Desi dev energy since day one. 🇮🇳   ║\n  ╚═══════════════════════════════════════╝\n        ╱╱╱  jugaad-powered coding  ╱╱╱",
       "color": "\u001b[38;2;255;153;51m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Zero dependencies. Unlike your family WhatsApp group.",
+      "Side effects: giggling during standup. Sab theek ho jayega.",
+      "npm install jugaad --save-dev",
+      "Faster than your chai break. Almost.",
+      "Terminal ne bulaya hai. Personality chahiye usse.",
+      "Warranty void if used without chai.",
+      "Bug toh feature hai jo kisine manga nahi.",
+      "Package.json mein ek aur dependency? Nahi yaar, bas yahi kaafi hai.",
+      "Humour inject ho raha hai workflow mein...",
+      "Aaj ka kaam aaj ho gaya. Miracle hai boss.",
+      "Code chal raha hai, mat touch karo. Jugaad hai.",
+      "Powered by cutting chai and impossible deadlines.",
+      "Beta, deploy karne se pehle test kar lo.",
+      "Chai pe charcha: why did the deploy fail at 5:59 PM?",
+      "Log lagaya, bug aaya, chai piya, fix kiya."
+    ],
+    "installing": "Installing yaar",
+    "installedLayers": "Sab install ho gaya:",
+    "preview": "Dekho zara:",
+    "colors": "Rangoli:",
+    "packInstalled": "Ho gaya bhai! Vibes loaded.",
+    "restart": "Claude Code restart karo, changes dikhenge.",
+    "whatsNext": "Aage kya:",
+    "restartHint": "Claude Code restart karo (naya session kholo)",
+    "switchAgent": "Agent badlo: dhundho",
+    "inAgentSelector": "agent list mein",
+    "tryAnother": "Aur pack try karo:",
+    "resetDefaults": "Sab reset karo:"
   }
 }

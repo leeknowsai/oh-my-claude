@@ -312,5 +312,36 @@
       "art": "  _____ _            ____       _ _\n |_   _| |__   ___  | __ ) _ __(_) |_\n   | | | '_ \\ / _ \\ |  _ \\| '__| | __|\n   | | | | | |  __/ | |_) | |  | | |_\n   |_| |_| |_|\\___| |____/|_|  |_|\\__|\n\n   ☕ Right then. Shall we crack on?\n\n   The kettle's boiled. Let's write some\n   proper code, shall we?\n\n   Mind the bugs.",
       "color": "\u001b[38;2;200;170;110m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Right then, installing your configuration. Mustn't grumble.",
+      "Zero dependencies. Rather civilised, that.",
+      "Side effects may include tutting less at your terminal.",
+      "Jolly good — no node_modules were inconvenienced.",
+      "Faster than the queue at Pret. Which isn't saying much.",
+      "npm install patience --save-dev",
+      "Your terminal rang. It would quite like some character.",
+      "Warranty void if consumed without tea.",
+      "A bug is merely an undocumented feature, old sport.",
+      "Powered by PG Tips and passive-aggressive Jira tickets.",
+      "This'll do nicely. Carry on.",
+      "Keep calm and npm install.",
+      "Terribly sorry, but this package is rather delightful.",
+      "More reliable than Southern Rail. Low bar, admittedly.",
+      "Brilliant. Absolutely brilliant."
+    ],
+    "installing": "Installing",
+    "installedLayers": "Installed, right then:",
+    "preview": "A preview, if you please:",
+    "colors": "Colour palette:",
+    "packInstalled": "Installed. Jolly good.",
+    "restart": "Restart Claude Code, would you kindly.",
+    "whatsNext": "What's next, then:",
+    "restartHint": "Restart Claude Code (pop the kettle on first)",
+    "switchAgent": "Switch agent: look for",
+    "inAgentSelector": "in the agent selector, please",
+    "tryAnother": "Fancy another pack?",
+    "resetDefaults": "Back to boring defaults:"
   }
 }

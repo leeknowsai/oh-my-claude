@@ -95,5 +95,31 @@
       "art": " ____      _                                   \n|  _ \\ ___| |_ _ __ _____      ____ ___   _____ \n| |_) / _ \\ __| '__/ _ \\ \\ /\\ / / _` \\ \\ / / _ \\\n|  _ <  __/ |_| | | (_) \\ V  V / (_| |\\ V /  __/\n|_| \\_\\___|\\__|_|  \\___/ \\_/\\_/ \\__,_| \\_/ \\___|\n                                                 \n  🌅 Insert cassette. Press play.",
       "color": "\u001b[35m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Inserting cassette... tracking adjusted.",
+      "Synthesizers warming up. Stand by.",
+      "This runs on nostalgia and 16-bit dreams.",
+      "Neon grid activated. DeLorean ready.",
+      "Press PLAY on your terminal.",
+      "Rewinding to a better era of development.",
+      "VHS quality code. Maximum aesthetic.",
+      "The sunset never sets in Retrowave.",
+      "Turbo mode engaged. Like it's 1987.",
+      "More synth than your Spotify wrapped."
+    ],
+    "installing": "Loading cassette",
+    "installedLayers": "Tracks loaded:",
+    "preview": "Now playing:",
+    "colors": "Neon palette:",
+    "packInstalled": "Tape is in. Press play.",
+    "restart": "Restart Claude Code. Cue the synths.",
+    "whatsNext": "Side B:",
+    "restartHint": "Restart Claude Code (flip the tape)",
+    "switchAgent": "Switch DJ: find",
+    "inAgentSelector": "in the booth",
+    "tryAnother": "Browse more tapes:",
+    "resetDefaults": "Eject cassette:"
   }
 }

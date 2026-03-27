@@ -102,5 +102,31 @@
       "art": "  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗ ██╗   ██╗███╗   ██╗██╗  ██╗\n ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██║   ██║████╗  ██║██║ ██╔╝\n ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║   ██║██╔██╗ ██║█████╔╝ \n ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔═══╝ ██║   ██║██║╚██╗██║██╔═██╗ \n ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██║     ╚██████╔╝██║ ╚████║██║  ██╗\n  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝\n                        ⚡ Jack in. The grid awaits.",
       "color": "\u001b[36m"
     }
+  },
+  "i18n": {
+    "installJokes": [
+      "Jacking into the mainframe...",
+      "Neural interface calibrated. Vibes nominal.",
+      "ICE breached. Payload delivered.",
+      "Chrome installed. Meat upgraded.",
+      "The net is vast and infinite. So are these jokes.",
+      "Flatlined once. Came back with better aesthetics.",
+      "Your terminal has been cyberdecked.",
+      "Running on synthetic caffeine and stolen bandwidth.",
+      "Another day in Night City. Another deploy.",
+      "The street finds its own uses for things. Like this CLI."
+    ],
+    "installing": "Jacking in",
+    "installedLayers": "Payload delivered:",
+    "preview": "Neural preview:",
+    "colors": "Neon:",
+    "packInstalled": "System upgraded. Chrome loaded.",
+    "restart": "Reboot your deck to activate.",
+    "whatsNext": "Next run:",
+    "restartHint": "Reboot Claude Code (jack back in)",
+    "switchAgent": "Switch persona: find",
+    "inAgentSelector": "in your deck",
+    "tryAnother": "Browse more chrome:",
+    "resetDefaults": "Wipe to factory:"
   }
 }

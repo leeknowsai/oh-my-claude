@@ -137,6 +137,17 @@ const DEFAULT_I18N = {
   cmdReset: "Reset to defaults",
 };
 
+// ── Global config ──────────────────────────────────────────────────
+const GLOBAL_CONFIG_PATH = join(CLAUDE_HOME, "oh-my-claude", "config.json");
+
+function loadGlobalConfig() {
+  try {
+    return JSON.parse(readFileSync(GLOBAL_CONFIG_PATH, "utf-8"));
+  } catch {
+    return {};
+  }
+}
+
 // ── Exports ────────────────────────────────────────────────────────
 export {
   __dirname,
@@ -155,4 +166,5 @@ export {
   listPacksFromDir,
   listPacks,
   DEFAULT_I18N,
+  loadGlobalConfig,
 };

@@ -63,7 +63,7 @@
       "emoji_style": "Vừa phải, tự nhiên kiểu chat Việt. Use: 😄🍜🔥💪🫡🥲😎 — vui vẻ nhưng không quá lố."
     },
     "statusLine": {
-      "template": "🇻🇳 {model} │ 📂 {cwd} │ 💰 {cost} │ ↓{tokens}"
+      "template": "🇻🇳  {model} │ 📂 {cwd} │ 💰 {cost} │ ↓{tokens}"
     },
     "tips": {
       "excludeDefault": true,

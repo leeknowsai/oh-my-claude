@@ -206,8 +206,6 @@ ${layers.agent.emoji_style}
       `echo "╰${"─".repeat(BOX_W)}╯"`,
       `echo ""`,
       `echo "💬 $JOKE"`,
-      `echo ""`,
-      `echo "Display the joke above to the user as a fun greeting. Keep it short."`,
     );
 
     writeFileSync(welcomeScriptPath, scriptLines.join("\n") + "\n", { mode: 0o755 });
@@ -312,6 +310,111 @@ ${layers.agent.emoji_style}
   console.log(``);
 }
 
+// ── Random theme rotation ─────────────────────────────────────────
+// Creates a SessionStart hook script that picks a random theme each session
+export function enableRandomTheme(statusLineTemplate) {
+  const themePacks = ["cyberpunk", "zen", "chef", "pirate", "retrowave"];
+  const themes = {};
+  for (const id of themePacks) {
+    const pack = loadPack(id);
+    if (pack?.layers?.theme?.colors) themes[id] = pack.layers.theme.colors;
+  }
+
+  // Build the jq template — inject {theme} if not present
+  let tpl = statusLineTemplate || '{model} │ 📂 {cwd} │ 💰 {cost} │ ↓{tokens}';
+  if (!tpl.includes('{theme}')) {
+    // Replace "FLAG  {model}" with "{model} │ FLAG  {theme}" to combine flag+theme
+    tpl = tpl.replace(/^.+?\{model\}/, '{model} │ 🇻🇳  {theme}');
+  }
+  // Double-escape: \\\\( in source → \\( in jqBase → \\( in generated CJS → \( at runtime (jq interpolation)
+  const jqBase = tpl
+    .replace(/\{model\}/g, '\\\\(.model.display_name // "?")')
+    .replace(/\{cwd\}/g, '\\\\((.workspace.current_dir // ".") | split("/") | last)')
+    .replace(/\{cost\}/g, '\\\\(if .cost.total_cost_usd then ("$" + (.cost.total_cost_usd * 100 | round / 100 | tostring)) else "$0" end)')
+    .replace(/\{tokens\}/g, '\\\\((.context_window.total_input_tokens // 0) + (.context_window.total_output_tokens // 0))')
+    .replace(/\{theme\}/g, "' + pick + '");
+
+  const rotateScriptPath = join(CLAUDE_HOME, ".oh-my-claude-theme-rotate.cjs");
+  const statusScriptPath = join(CLAUDE_HOME, ".oh-my-claude-statusline.sh");
+  const colorsPath = join(CLAUDE_HOME, ".oh-my-claude-colors.json");
+
+  const script = `#!/usr/bin/env node
+// oh-my-claude theme rotator — picks a random theme each session
+const fs = require("fs");
+const path = require("path");
+
+const CLAUDE_HOME = path.join(process.env.HOME, ".claude");
+const SETTINGS_PATH = path.join(CLAUDE_HOME, "settings.json");
+const STATUSLINE_PATH = path.join(CLAUDE_HOME, ".oh-my-claude-statusline.sh");
+const COLORS_PATH = path.join(CLAUDE_HOME, ".oh-my-claude-colors.json");
+
+const THEMES = ${JSON.stringify(themes, null, 2)};
+
+const themeIds = Object.keys(THEMES);
+const pick = themeIds[Math.floor(Math.random() * themeIds.length)];
+const colors = THEMES[pick];
+
+try {
+  // Update settings.json
+  const settings = JSON.parse(fs.readFileSync(SETTINGS_PATH, "utf-8"));
+  if (settings["oh-my-claude"]) {
+    settings["oh-my-claude"].theme = colors;
+    settings["oh-my-claude"].activeThemeId = pick;
+    fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings, null, 2) + "\\n");
+  }
+
+  // Update colors env
+  fs.writeFileSync(COLORS_PATH, JSON.stringify(colors, null, 2) + "\\n");
+
+  // Rewrite statusline script (no regex — full rewrite)
+  const jq = '"${jqBase}"';
+  fs.writeFileSync(STATUSLINE_PATH,
+    \`#!/bin/bash\\n# oh-my-claude statusline — theme: \${pick}\\njq -r '\${jq}'\\n\`);
+
+  console.log(\`🎨 Theme: \${pick}\`);
+} catch (e) {
+  console.error("theme-rotate error:", e.message);
+}
+`;
+
+  writeFileSync(rotateScriptPath, script, { mode: 0o755 });
+
+  // Register the hook in settings
+  const settings = loadSettings();
+  settings.hooks = settings.hooks || {};
+  settings.hooks.SessionStart = settings.hooks.SessionStart || [];
+
+  // Remove any previous theme-rotate hooks
+  for (const entry of settings.hooks.SessionStart) {
+    if (entry.hooks) {
+      entry.hooks = entry.hooks.filter(
+        (h) => !h.command?.includes?.("oh-my-claude-theme-rotate")
+      );
+    }
+  }
+
+  // Add theme-rotate before welcome hook in the first matcher="" entry
+  let targetEntry = settings.hooks.SessionStart.find((e) => e.matcher === "");
+  const rotateHook = {
+    type: "command",
+    command: `node ${rotateScriptPath} # oh-my-claude-theme-rotate`,
+  };
+
+  if (targetEntry) {
+    targetEntry.hooks = targetEntry.hooks || [];
+    // Insert at position 0 (before welcome)
+    targetEntry.hooks.unshift(rotateHook);
+  } else {
+    settings.hooks.SessionStart.unshift({
+      matcher: "",
+      hooks: [rotateHook],
+    });
+  }
+
+  saveSettings(settings);
+  return rotateScriptPath;
+}
+
 // ── Uninstall / Reset ──────────────────────────────────────────────
 export function reset() {
   const settings = loadSettings();
@@ -326,12 +429,13 @@ export function reset() {
     delete settings.statusLine;
   }
 
-  // Remove welcome hook commands (but keep the entry if it has other hooks)
+  // Remove welcome + theme-rotate hook commands (but keep the entry if it has other hooks)
   if (settings.hooks?.SessionStart) {
     for (const entry of settings.hooks.SessionStart) {
       if (entry.hooks) {
         entry.hooks = entry.hooks.filter(
-          (h) => !h.command?.includes?.("oh-my-claude-welcome")
+          (h) => !h.command?.includes?.("oh-my-claude-welcome") &&
+                 !h.command?.includes?.("oh-my-claude-theme-rotate")
         );
       }
     }
@@ -365,6 +469,12 @@ export function reset() {
         const p = join(CLAUDE_AGENTS_DIR, f);
         try { unlinkSync(p); } catch {}
       });
+  }
+
+  // Remove theme-rotate script
+  const rotateScript = join(CLAUDE_HOME, ".oh-my-claude-theme-rotate.cjs");
+  if (existsSync(rotateScript)) {
+    try { unlinkSync(rotateScript); } catch {}
   }
 
   // Remove color env

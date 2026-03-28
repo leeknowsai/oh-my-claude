@@ -5,7 +5,7 @@ import {
   BUILTIN_PACKS_DIR, loadPack, loadSettings, saveSettings,
   listPacksFromDir, DEFAULT_I18N,
 } from "./packs.js";
-import { install, writeColorEnv } from "./install.js";
+import { install, writeColorEnv, enableRandomTheme } from "./install.js";
 
 // ── Constants ─────────────────────────────────────────────────────
 export const LOCALE_MAP = [
@@ -308,15 +308,19 @@ export async function setup() {
     install(localePack.id);
     if (chosenTheme.id) {
       applyThemeOverlay(chosenTheme.id);
+    } else {
+      // Random — enable theme rotation hook
+      const statusTemplate = localePack.layers?.statusLine?.template;
+      enableRandomTheme(statusTemplate);
     }
-    // If Random (null id) — keep flagship/lang colors as-is
   } else {
     // Skip language — install theme pack directly (has all layers)
     if (chosenTheme.id) {
       install(chosenTheme.id);
     } else {
-      // Random — install flagship pack
+      // Random — install flagship pack + enable rotation
       install("oh-my-claude");
+      enableRandomTheme();
     }
   }
 

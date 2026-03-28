@@ -1,6 +1,6 @@
 {
   "name": "oh-my-claude-cli",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Theme packs for Claude Code — colors, spinner verbs, agent personalities, and status lines bundled into one-command installs.",
   "type": "module",
   "bin": {

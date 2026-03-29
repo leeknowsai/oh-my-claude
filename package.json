@@ -4,8 +4,8 @@
   "description": "Theme packs for Claude Code — colors, spinner verbs, agent personalities, and status lines bundled into one-command installs.",
   "type": "module",
   "bin": {
-    "oh-my-claude": "./src/cli.js",
-    "oh-my-claude-cli": "./src/cli.js"
+    "oh-my-claude-cli": "./src/cli.js",
+    "oh-my-claude": "./src/cli.js"
   },
   "scripts": {
     "start": "node src/cli.js",

@@ -1,6 +1,6 @@
 {
   "name": "oh-my-claude-jokes",
-  "version": "0.5.10",
+  "version": "0.6.0",
   "description": "Theme packs for Claude Code — colors, spinner verbs, agent personalities, and status lines bundled into one-command installs.",
   "type": "module",
   "bin": {

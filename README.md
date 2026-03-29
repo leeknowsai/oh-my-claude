@@ -23,23 +23,23 @@ Instead of generic tips you get:
 ## Quick Start
 
 ```bash
-npx oh-my-claude-cli install oh-my-claude
+npx oh-my-claude-jokes install oh-my-claude
 ```
 
 That's it. Restart Claude Code and enjoy.
 
 ```bash
 # Want jokes in your language?
-npx oh-my-claude-cli install desi-dev
+npx oh-my-claude-jokes install desi-dev
 
 # Browse all packs
-npx oh-my-claude-cli list
+npx oh-my-claude-jokes list
 
 # Preview before installing
-npx oh-my-claude-cli preview korea-dev
+npx oh-my-claude-jokes preview korea-dev
 
 # Go back to boring defaults
-npx oh-my-claude-cli reset
+npx oh-my-claude-jokes reset
 ```
 
 ## Packs
@@ -89,14 +89,14 @@ Each pack bundles up to 7 layers (no external dependencies) — install once, ge
 
 ```bash
 # Scaffold a new pack
-npx oh-my-claude-cli create my-vibes
+npx oh-my-claude-jokes create my-vibes
 
 # Edit it
 # -> ~/.claude/oh-my-claude/packs/my-vibes/pack.json
 
 # Preview and install
-npx oh-my-claude-cli preview my-vibes
-npx oh-my-claude-cli install my-vibes
+npx oh-my-claude-jokes preview my-vibes
+npx oh-my-claude-jokes install my-vibes
 ```
 
 Want to contribute a language pack? Copy any pack from `local-dev-jokes/` as a template, fill in your jokes, and submit a PR.

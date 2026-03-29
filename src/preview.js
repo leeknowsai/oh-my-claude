@@ -162,7 +162,7 @@ export function preview(packId) {
   }
 
   // ── Install command ──
-  const installCmd = `npx oh-my-claude-cli install ${packId}`;
+  const installCmd = `npx oh-my-claude-jokes install ${packId}`;
   const error = toAnsi(colors.error) || "\x1b[31m";
   console.log(`  ${accent}│${reset}${" ".repeat(W)} ${accent}│${reset}`);
   console.log(`  ${accent}│${reset}   ${success}▶ ${bold}${installCmd}${reset}${" ".repeat(Math.max(0, W - installCmd.length - 4))} ${accent}│${reset}`);

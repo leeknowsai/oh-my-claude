@@ -324,8 +324,8 @@ ${layers.agent.emoji_style}
   if (pack.layers?.agent) {
     console.log(`    ${ac}▶${r} ${i18n.switchAgent} "${ac}oh-my-claude-${packId}${r}" ${i18n.inAgentSelector}`);
   }
-  console.log(`    ${wc}▶${r} ${i18n.tryAnother}  ${d}oh-my-claude-cli list${r}`);
-  console.log(`    ${d}▶${r} ${i18n.resetDefaults} ${d}oh-my-claude-cli reset${r}`);
+  console.log(`    ${wc}▶${r} ${i18n.tryAnother}  ${d}oh-my-claude-jokes list${r}`);
+  console.log(`    ${d}▶${r} ${i18n.resetDefaults} ${d}oh-my-claude-jokes reset${r}`);
   console.log(``);
 }
 

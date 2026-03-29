@@ -62,7 +62,7 @@ describe("CLI commands", () => {
 
   it("preview — shows install command hint", () => {
     const out = run(["preview", "oh-my-claude"]);
-    expect(out).toContain("npx oh-my-claude-cli install");
+    expect(out).toContain("npx oh-my-claude-jokes install");
   });
 });
 

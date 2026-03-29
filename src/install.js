@@ -81,26 +81,45 @@ ${layers.agent.emoji_style}
   }
 
   // Layer 4: Status line — generate a bash script from the template
+  // Merges with user's existing statusLine instead of replacing it
   if (layers.statusLine && !options.skipStatusLine) {
     settings["oh-my-claude"] = settings["oh-my-claude"] || {};
     settings["oh-my-claude"].statusLine = layers.statusLine.template;
+
+    // Save user's original statusLine (skip if already saved or if it's our own)
+    if (!settings["oh-my-claude"].originalStatusLine && settings.statusLine && !settings.statusLine?.command?.includes?.("oh-my-claude-statusline")) {
+      settings["oh-my-claude"].originalStatusLine = settings.statusLine;
+    }
 
     const statusScriptPath = join(CLAUDE_HOME, ".oh-my-claude-statusline.sh");
     const template = layers.statusLine.template;
 
     // Build jq expression that replaces {model}, {cwd}, {cost}, {tokens}
-    // jq reads JSON from stdin provided by Claude Code
     const jqExpr = template
       .replace(/\{model\}/g, '\\(.model.display_name // "?")')
       .replace(/\{cwd\}/g, '\\((.workspace.current_dir // ".") | split("/") | last)')
       .replace(/\{cost\}/g, '\\(if .cost.total_cost_usd then ("$" + (.cost.total_cost_usd * 100 | round / 100 | tostring)) else "$0" end)')
       .replace(/\{tokens\}/g, '\\((.context_window.total_input_tokens // 0) + (.context_window.total_output_tokens // 0))');
 
-    const statusScript = [
-      `#!/bin/bash`,
-      `# oh-my-claude statusline — generated from template: ${template}`,
-      `jq -r '"${jqExpr}"'`,
-    ].join("\n") + "\n";
+    // Merge: prepend omc prefix to user's original statusLine output
+    const originalCmd = settings["oh-my-claude"].originalStatusLine;
+    let statusScript;
+    if (originalCmd?.type === "command" && originalCmd.command) {
+      statusScript = [
+        `#!/bin/bash`,
+        `# oh-my-claude statusline — merged with user's original`,
+        `INPUT=$(cat)`,
+        `PREFIX=$(printf '%s' "$INPUT" | jq -r '"${jqExpr}"')`,
+        `ORIGINAL=$(printf '%s' "$INPUT" | ${originalCmd.command})`,
+        `echo "$PREFIX │ $ORIGINAL"`,
+      ].join("\n") + "\n";
+    } else {
+      statusScript = [
+        `#!/bin/bash`,
+        `# oh-my-claude statusline — generated from template: ${template}`,
+        `jq -r '"${jqExpr}"'`,
+      ].join("\n") + "\n";
+    }
 
     writeFileSync(statusScriptPath, statusScript, { mode: 0o755 });
 
@@ -366,10 +385,16 @@ try {
   // Update colors env
   fs.writeFileSync(COLORS_PATH, JSON.stringify(colors, null, 2) + "\\n");
 
-  // Rewrite statusline script (no regex — full rewrite)
+  // Rewrite statusline script — merge with user's original if present
   const jq = '"${jqBase}"';
-  fs.writeFileSync(STATUSLINE_PATH,
-    \`#!/bin/bash\\n# oh-my-claude statusline — theme: \${pick}\\njq -r '\${jq}'\\n\`);
+  const origCmd = settings["oh-my-claude"]?.originalStatusLine;
+  if (origCmd?.type === "command" && origCmd.command) {
+    fs.writeFileSync(STATUSLINE_PATH,
+      \`#!/bin/bash\\n# oh-my-claude statusline — theme: \${pick} (merged)\\nINPUT=$(cat)\\nPREFIX=$(printf '%s' "$INPUT" | jq -r '\${jq}')\\nORIGINAL=$(printf '%s' "$INPUT" | \${origCmd.command})\\necho "$PREFIX │ $ORIGINAL"\\n\`);
+  } else {
+    fs.writeFileSync(STATUSLINE_PATH,
+      \`#!/bin/bash\\n# oh-my-claude statusline — theme: \${pick}\\njq -r '\${jq}'\\n\`);
+  }
 
   console.log(\`🎨 Theme: \${pick}\`);
 } catch (e) {
@@ -419,13 +444,18 @@ try {
 export function reset() {
   const settings = loadSettings();
 
+  // Restore user's original statusLine before clearing oh-my-claude
+  const originalStatusLine = settings["oh-my-claude"]?.originalStatusLine;
+
   // Remove oh-my-claude keys
   delete settings["oh-my-claude"];
   delete settings.spinnerVerbs;
   delete settings.spinnerTipsOverride;
 
-  // Remove statusLine if it points to our generated script
-  if (settings.statusLine?.command?.includes?.("oh-my-claude-statusline")) {
+  // Restore original statusLine, or remove omc's if no original saved
+  if (originalStatusLine) {
+    settings.statusLine = originalStatusLine;
+  } else if (settings.statusLine?.command?.includes?.("oh-my-claude-statusline")) {
     delete settings.statusLine;
   }
 
